@@ -20,6 +20,12 @@
                                 <jet-nav-link :href="route('dashboard')" :active="route().current('dashboard')">
                                     Dashboard
                                 </jet-nav-link>
+                                <jet-nav-link :href="route('asistencia.index')" :active="route().current('asistencia.index')">
+                                    asistencia
+                                </jet-nav-link>
+                                <jet-nav-link :href="route('factura.index')" :active="route().current('factura.index')">
+                                    factura
+                                </jet-nav-link>
                             </div>
                         </div>
 
