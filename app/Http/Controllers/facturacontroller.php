@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Http\Requests\FacturaRequest;
 use App\models\factura;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
@@ -17,7 +17,7 @@ class facturacontroller extends Controller
     public function index()
     {
         $factura=factura::all();
-        return inertia::render('mostrarfactura', ['factura'=>$factura]);
+        return inertia::render('mostrarfactura', compact('factura'));
     }
 
     /**
@@ -27,7 +27,7 @@ class facturacontroller extends Controller
      */
     public function create()
     {
-        return inertia::render('formcrearfactura');
+        return Inertia::render('formcrearfactura');
     }
 
     /**
@@ -36,19 +36,11 @@ class facturacontroller extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(FacturaRequest $request)
     {
-        $request->validate([
-            'cantidad'=>'required',
-            'descripcion'=>'required',
-            'precio_unidad'=>'required',
-            'fecha'=>'required',
-            'empleado'=>'required',
-            'cliente'=>'required'
-          ]);
-          
+       
           factura::create($request->all());
-          return redirect::round('factura.index');
+          return Inertia::render('mostrarfactura');
     }
 
     /**

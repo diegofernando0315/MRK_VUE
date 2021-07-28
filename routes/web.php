@@ -3,8 +3,9 @@
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
-use App\Http\Controllers\asistenciaController;
-use App\Http\Controllers\facturaController;
+//use App\Http\Controllers\asistenciaController;
+use App\Http\Controllers\facturacontroller;
+use App\Http\Models\factura;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,12 +31,17 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function(){
 })->name('dashboard');
 
 
-Route::resource('asistencia', asistenciaController::class)
-  ->middleware(['auth:sanctum', 'verified']);
 
-Route::resource('factura', facturaController::class)
-   ->middleware(['auth:sanctum', 'verified']);
+Route::middleware(['auth:sanctum','verified'])->resource('/dasboard/factura',facturacontroller::class);
+
+//Route::middleware(['auth:sanctum','verified'])->resource('/dasboard/asistencia',asistenciacontroller::class);
+
+//Route::resource('asistencia', asistenciacontroller::class)
+ // ->middleware(['auth:sanctum', 'verified']);
+
+//Route::resource('factura', facturacontroller::class)
+  // ->middleware(['auth:sanctum', 'verified']);
 
 
-
+ 
 

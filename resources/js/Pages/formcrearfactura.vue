@@ -8,25 +8,26 @@
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                    
+                    {{errors}}
                 <form @submit.prevent="submit" class="mb-6">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 mt-5 mx-7">
                 
                 <div class="grid grid-cols-1">
-                    <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">cantidad</label>
+                    <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Cantidad</label>
                     <input 
                     id="cantidad"
-                    v-model="form.cantidad"
+                    v-model="cantidad"
                     class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" placeholder="cantidad" 
                     />
+                    <input-error :message="errors.cantidad"/>
                 </div>
                 
                 <div class="grid grid-cols-1">
-                    <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">descripcion</label>
+                    <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">descripción</label>
                     <input         
                         id="descripcion"
-                        v-model="form.descripcion"                
-                    class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" placeholder="descripcion" 
+                        v-model="descripcion"                
+                    class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" placeholder="descripción" 
                     />
                 </div>
 
@@ -34,32 +35,32 @@
                     <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">precio_unidad</label>
                     <input         
                         id="precio_unidad"
-                        v-model="form.precio_unidad"                
+                        v-model="precio_unidad"                
                     class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" placeholder="precio_unidad" 
+                    />
+                </div>
+                <div class="grid grid-cols-1">
+                    <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Total</label>
+                    <input         
+                        id="total"
+                        v-model="total"                
+                    class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" placeholder="Total" 
                     />
                 </div>
                 <div class="grid grid-cols-1">
                     <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Fecha</label>
                     <input         
-                        id="Fecha"
-                        v-model="Fecha"                
+                        id="fecha"
+                        v-model="fecha"                
                     class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" placeholder="Fecha" 
                     />
                 </div>
+                
                 <div class="grid grid-cols-1">
-                    <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Empleado</label>
+                    <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Usuario</label>
                     <input         
-                        id="Empleado"
-                        v-model="Empleado"                
-                    class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" placeholder="Empleado" 
-                    />
-                </div>
-
-                <div class="grid grid-cols-1">
-                    <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">cliente</label>
-                    <input         
-                        id="cliente"
-                        v-model="cliente"                
+                        id="usuario"
+                        v-model="usuario"                
                     class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" placeholder="cliente" 
                     />
                 </div>
@@ -69,7 +70,7 @@
             
                 <div class='flex justify-end md:gap-8 gap-4 pt-5 pb-5 pr-5'>      
                 <inertia-link
-                    :href="route('asistencia.index')"                    
+                    :href="route('factura.index')"                    
                     class='w-auto bg-gray-500 hover:bg-gray-700 rounded-lg shadow-xl font-medium text-white px-4 py-2' type="button">
                     Cancelar
                     
@@ -90,32 +91,44 @@
 </template>
 
 <script>
+import {Inertia} from '@inertiajs/inertia';
 import AppLayout from "@/Layouts/AppLayout";
-export default {
-    components:{
-        AppLayout
-    },
-    props:{
+import InputError from "@/Jetstream/InputError";
 
-       errors: Object
+export default {
+     components:{
+        AppLayout,
+       InputError
     },
+    props:["errors"],
+
     data(){
+
         return{
             form:{
                 cantidad:null,
                 descripcion:null,
                 precio_unidad:null,
+                total:null,
                 fecha:null,
-                empleado:null,
-                cliente:null
+                usuario:null
                 
             }
         }
     },
     methods:{
         submit(){
-            this.$inertia.post(route('store.factura'), this.form);
-        }
-    }
-}
+           // this.$inertia.post(route('store.factura'), this.form);
+
+           Inertia.post(route('factura.index'),{
+               cantidad:this.cantidad,
+               descripcion:this.descripcion,
+               precio_unidad:this.precio_unidad,
+               total:this.total,
+               fecha:this.fecha,
+               usuario:this.usuario
+           });
+        },
+    },
+};
 </script>

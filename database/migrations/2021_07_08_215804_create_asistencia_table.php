@@ -13,7 +13,7 @@ class CreateAsistenciaTable extends Migration
      */
     public function up()
     {
-        Schema::create('asistencia', function (Blueprint $table) {
+        Schema::create('asistencias', function (Blueprint $table) {
             $table->id();
             $table->string('inicio');
             $table->string('fin');
