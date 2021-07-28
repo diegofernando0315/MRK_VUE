@@ -29,8 +29,8 @@ class FacturaRequest extends FormRequest
             'precio_unidad'=>'required|string|max:255',
             'total'=>'required|string|max:200',
             'fecha'=>'required|string|max:255',
-            'empleado'=>'required|string|max:255',
-            'cliente'=>'required|string|max:255'
+            'cliente'=>'required|string|max:255',
+            
         ];
     }
 }

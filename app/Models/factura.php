@@ -20,7 +20,6 @@ class factura extends Model
             'precio_unidad',
             'total',
             'fecha',
-            'empleado',
             'cliente'];
 
             

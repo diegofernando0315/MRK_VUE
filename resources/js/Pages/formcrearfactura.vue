@@ -63,8 +63,8 @@
                 <div class="grid grid-cols-1">
                     <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Usuario</label>
                     <input         
-                        id="usuario"
-                        v-model="usuario"                
+                        id="cliente"
+                        v-model="cliente"                
                     class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" placeholder="cliente" 
                     />
                     <input-error :message="errors.usuario"/>
@@ -110,28 +110,26 @@ export default {
     data(){
 
         return{
-            form:{
+            
                 cantidad:null,
                 descripcion:null,
                 precio_unidad:null,
                 total:null,
                 fecha:null,
-                usuario:null
+                cliente:null
                 
-            }
+            
         }
     },
     methods:{
         submit(){
-           // this.$inertia.post(route('store.factura'), this.form);
-
            Inertia.post(route('factura.index'),{
                cantidad:this.cantidad,
                descripcion:this.descripcion,
                precio_unidad:this.precio_unidad,
                total:this.total,
                fecha:this.fecha,
-               usuario:this.usuario
+               cliente:this.cliente
            });
         },
     },
