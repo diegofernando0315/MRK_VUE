@@ -15,7 +15,7 @@ class factura extends Model
     //protected $fillable =['id_factura','cantidad','descripcion','precio_unidad','tolal','fecha','cliente'];
 
     protected $fillable=[ 
-        'cantidad',
+            'cantidad',
             'descripcion',
             'precio_unidad',
             'total',

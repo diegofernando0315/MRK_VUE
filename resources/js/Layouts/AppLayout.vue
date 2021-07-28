@@ -24,6 +24,10 @@
                                 <jet-nav-link :href="route('factura.index')" :active="route().current('factura.index')">
                                     factura
                                 </jet-nav-link>
+
+                                 <jet-nav-link :href="route('Asistencia.index')" :active="route().current('Asistencia.index')">
+                                    Asistencia
+                                </jet-nav-link>
                             </div>
                         </div>
 
