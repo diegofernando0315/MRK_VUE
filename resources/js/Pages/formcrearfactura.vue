@@ -8,7 +8,7 @@
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                    {{errors}}
+                   
                 <form @submit.prevent="submit" class="mb-6">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 mt-5 mx-7">
                 
@@ -29,6 +29,7 @@
                         v-model="descripcion"                
                     class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" placeholder="descripción" 
                     />
+                    <input-error :message="errors.descripcion"/>
                 </div>
 
                 <div class="grid grid-cols-1">
@@ -38,6 +39,7 @@
                         v-model="precio_unidad"                
                     class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" placeholder="precio_unidad" 
                     />
+                    <input-error :message="errors.precio_unidad"/>
                 </div>
                 <div class="grid grid-cols-1">
                     <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Total</label>
@@ -46,6 +48,7 @@
                         v-model="total"                
                     class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" placeholder="Total" 
                     />
+                    <input-error :message="errors.total"/>
                 </div>
                 <div class="grid grid-cols-1">
                     <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Fecha</label>
@@ -54,6 +57,7 @@
                         v-model="fecha"                
                     class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" placeholder="Fecha" 
                     />
+                    <input-error :message="errors.fecha"/>
                 </div>
                 
                 <div class="grid grid-cols-1">
@@ -63,6 +67,7 @@
                         v-model="usuario"                
                     class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" placeholder="cliente" 
                     />
+                    <input-error :message="errors.usuario"/>
                 </div>
                 
                 </div>
