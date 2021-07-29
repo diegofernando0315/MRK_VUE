@@ -16,7 +16,7 @@
                     <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Cantidad</label>
                     <input 
                     id="cantidad"
-                    v-model="cantidad"
+                    v-model="form.cantidad"
                     class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" placeholder="cantidad" 
                     />
                     <input-error :message="errors.cantidad"/>
@@ -26,7 +26,7 @@
                     <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">descripción</label>
                     <input         
                         id="descripcion"
-                        v-model="descripcion"                
+                        v-model="form.descripcion"                
                     class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" placeholder="descripción" 
                     />
                     <input-error :message="errors.descripcion"/>
@@ -36,7 +36,7 @@
                     <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">precio_unidad</label>
                     <input         
                         id="precio_unidad"
-                        v-model="precio_unidad"                
+                        v-model="form.precio_unidad"                
                     class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" placeholder="precio_unidad" 
                     />
                     <input-error :message="errors.precio_unidad"/>
@@ -45,7 +45,7 @@
                     <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Total</label>
                     <input         
                         id="total"
-                        v-model="total"                
+                        v-model="form.total"                
                     class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" placeholder="Total" 
                     />
                     <input-error :message="errors.total"/>
@@ -54,7 +54,7 @@
                     <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Fecha</label>
                     <input         
                         id="fecha"
-                        v-model="fecha"                
+                        v-model="form.fecha"                
                     class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" placeholder="Fecha" 
                     />
                     <input-error :message="errors.fecha"/>
@@ -64,7 +64,7 @@
                     <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Usuario</label>
                     <input         
                         id="cliente"
-                        v-model="cliente"                
+                        v-model="form.cliente"                
                     class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" placeholder="cliente" 
                     />
                     <input-error :message="errors.usuario"/>
@@ -111,26 +111,21 @@ export default {
 
         return{
             
+              form:{
                 cantidad:null,
                 descripcion:null,
                 precio_unidad:null,
                 total:null,
                 fecha:null,
                 cliente:null
+              }
                 
             
         }
     },
     methods:{
         submit(){
-           Inertia.post(route('factura.index'),{
-               cantidad:this.cantidad,
-               descripcion:this.descripcion,
-               precio_unidad:this.precio_unidad,
-               total:this.total,
-               fecha:this.fecha,
-               cliente:this.cliente
-           });
+           Inertia.post(route('factura.index'), this.form);
         },
     },
 };
