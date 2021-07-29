@@ -1,10 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Http\Requests\AsistenciaRequest;
+use App\models\Asistencia;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
+use Illuminate\Support\Facades\Redirect;
 
-class BodegaController extends Controller
+class Asistenciacontroller extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +16,8 @@ class BodegaController extends Controller
      */
     public function index()
     {
-        //
+        $Asistencia=Asistencia::all();
+        return inertia::render('mostrarAsistencias', compact('Asistencia'));
     }
 
     /**
@@ -23,7 +27,7 @@ class BodegaController extends Controller
      */
     public function create()
     {
-        //
+        return Inertia::render('formcrearAsistencias');
     }
 
     /**
@@ -32,9 +36,10 @@ class BodegaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AsistenciaRequest $request)
     {
-        //
+        Asistencia::create($request->all());
+        return Inertia::render('mostrarAsistencias');
     }
 
     /**
@@ -56,7 +61,7 @@ class BodegaController extends Controller
      */
     public function edit($id)
     {
-        //
+        return inertia::render('formeditarAsistencia',['Asistencia'=>$Asistencia]);
     }
 
     /**
@@ -68,7 +73,8 @@ class BodegaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $Asistencia->update($request->all());
+        returnredirect::route('Asistencia.index');
     }
 
     /**
@@ -79,6 +85,7 @@ class BodegaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $Asistencia->delete();
+        returnredirect::route('Asistencia.index');
     }
 }
