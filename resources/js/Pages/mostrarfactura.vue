@@ -38,13 +38,13 @@
                              <td>{{fact.created_at}}</td>
                              <td>{{fact.updated_at}}</td>
                             <td class="flex m-2">
-                     <inertia-link :href="route('factura.edit',fact.id)"
+                     <inertia-link :href="route('factura.edit',{customer: fact})"
                           class="flex-shrink-0 bg-blue-500 text-white text-base font-semibold py-2 px-2 rounded-lg shadow-md"
                           type="button">
                           Editar  
                      </inertia-link>|
 
-                     <inertia-link :href="route('factura.destroy', fact.id)"
+                     <inertia-link :href="route('factura.destroy',{customer: fact} )"
                         class="flex-shrink-0 bg-red-500 text-white text-base font-semibold py-2 px-2 rounded-lg shadow-md"
                         type="button">
                          Eliminar  
@@ -64,7 +64,7 @@
     
 
     export default {
-        props:['factura' ],
+        props:["factura","customer" ],
         components: {
             AppLayout,
            

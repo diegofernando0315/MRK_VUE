@@ -36,7 +36,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function(){
 
 
 
-Route::middleware(['auth:sanctum','verified'])->resource('/dasboard/factura',facturacontroller::class);
+Route::middleware(['auth:sanctum','verified'])->resource('/dasboard/factura',facturacontroller::class)->parameters(['factura'=>'customer']);
 
 Route::middleware(['auth:sanctum','verified'])->resource('/dasboard/Asistencia',AsistenciaController::class);
 

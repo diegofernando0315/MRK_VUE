@@ -105,27 +105,27 @@ export default {
         AppLayout,
        InputError
     },
-    props:["errors"],
+    props:["customer","errors"],
 
     data(){
 
         return{
             
               form:{
-                cantidad:null,
-                descripcion:null,
-                precio_unidad:null,
-                total:null,
-                fecha:null,
-                cliente:null
-              }
+                cantidad:this.customer.cantidad,
+                descripcion:this.customer.descripcion,
+                precio_unidad:this.customer.precio_unidad,
+                total:this.customer.total,
+                fecha:this.customer.fecha,
+                cliente:this.customer.cliente
+              },
                 
             
-        }
+        };
     },
     methods:{
         submit(){
-           Inertia.post(route('factura.index'), this.form);
+           Inertia.put(route('factura.update',{ 'customer':this.customer} ), this.form);
         },
     },
 };

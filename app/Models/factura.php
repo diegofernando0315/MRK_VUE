@@ -21,7 +21,4 @@ class factura extends Model
             'total',
             'fecha',
             'cliente'];
-
-            
-
-}
+        }

@@ -60,9 +60,9 @@ class facturacontroller extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(factura $customer)
     {
-        return inertia::render('formeditarfactura',['factura'=>$factura]);
+        return Inertia::render('EditarFactura',compact('customer'));
     }
 
     /**
@@ -72,10 +72,10 @@ class facturacontroller extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(EditarFactura $request, factura $customer )
     {
-        $factura->update($request->all());
-        returnredirect::route('factura.index');
+        $customer->update($request->validate);
+        return redirect::route('factura.index');
     }
 
     /**
