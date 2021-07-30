@@ -28,6 +28,9 @@
                                  <jet-nav-link :href="route('Asistencia.index')" :active="route().current('Asistencia.index')">
                                     Asistencia
                                 </jet-nav-link>
+                                <jet-nav-link :href="route('Asistencia.index')" :active="route().current('Bodega.index')">
+                                    Bodega
+                                </jet-nav-link>
                             </div>
                         </div>
 
