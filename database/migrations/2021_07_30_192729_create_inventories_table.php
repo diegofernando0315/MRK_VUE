@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAsistenciaTable extends Migration
+class CreateInventoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,12 @@ class CreateAsistenciaTable extends Migration
      */
     public function up()
     {
-        Schema::create('asistencias', function (Blueprint $table) {
+        Schema::create('inventories', function (Blueprint $table) {
             $table->id();
-            $table->string('inicio');
-            $table->string('final');
-            $table->string('total_dia');
-            $table->string('fecha');
-            $table->string('empleado');
+            $table->integer('cantidad');
+            $table->string('tipo');
+            $table->date('fecha');
+            $table->string('proveedor');
             $table->timestamps();
         });
     }
@@ -31,6 +30,6 @@ class CreateAsistenciaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('asistencia');
+        Schema::dropIfExists('inventories');
     }
 }

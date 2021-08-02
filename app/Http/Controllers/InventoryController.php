@@ -1,13 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Http\Requests\AsistenciaRequest;
-use App\models\Asistencia;
+
+use App\Models\Inventory;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
-use Illuminate\Support\Facades\Redirect;
 
-class Asistenciacontroller extends Controller
+class InventoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +15,10 @@ class Asistenciacontroller extends Controller
      */
     public function index()
     {
-        $Asistencia=Asistencia::all();
-        return inertia::render('mostrarAsistencias', compact('Asistencia'));
+        $inventarios=Inventory::all();
+        return Inertia::render('Inventories/Index', [
+            'inventories' => $inventarios,
+        ]);
     }
 
     /**
@@ -27,7 +28,7 @@ class Asistenciacontroller extends Controller
      */
     public function create()
     {
-        return Inertia::render('formcrearAsistencias');
+        return Inertia::render('Inventories/Create', []);
     }
 
     /**
@@ -36,19 +37,18 @@ class Asistenciacontroller extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(AsistenciaRequest $request)
+    public function store(Request $request)
     {
-        Asistencia::create($request->all());
-        return Inertia::render('mostrarAsistencias');
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Inventory  $inventory
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Inventory $inventory)
     {
         //
     }
@@ -56,36 +56,34 @@ class Asistenciacontroller extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Inventory  $inventory
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Inventory $inventory)
     {
-        return inertia::render('formeditarAsistencia',['Asistencia'=>$Asistencia]);
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\Inventory  $inventory
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Inventory $inventory)
     {
-        $Asistencia->update($request->all());
-        returnredirect::route('Asistencia.index');
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\Inventory  $inventory
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Inventory $inventory)
     {
-        $Asistencia->delete();
-        returnredirect::route('Asistencia.index');
+        //
     }
 }
