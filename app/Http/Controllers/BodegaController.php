@@ -1,9 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
+Use App\Models\Bodega;
 use App\Http\Requests\BodegaRequest;
-use App\Http\Bodega;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Iluminate\Support\Facades\Redirect;
@@ -18,7 +17,7 @@ class BodegaController extends Controller
      */
     public function index()
     {
-        $Bodega=Bodega::all();
+        $bodega=Bodega::all();
         return inertia::render('mostrarBodega', compact('Bodega'));
     }
 
@@ -47,10 +46,10 @@ class BodegaController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Bodega 
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Bodega $bodega)
     {
         //
     }
@@ -58,36 +57,38 @@ class BodegaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param \App\Models\Bodega 
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Bodega $bodega)
     {
-        return inertia::render('formeditarBodega',['Bodega'=>$Bodega]);
+        return inertia::render('formeditarBodega',[$bodega=>'Bodega']);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\Bodega 
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Bodega $request, Bodega $customer )
     {
-        $Bodega->update($request->all());
-        returnredirect::route('Bodega.index');
+        $customer->update($request->validate);
+        return redirect ()->route('Bodega.index');
     }
+
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\Bodega $bodega
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Bodega $bodega)
     {
-        $Bodega->delete();
-        returnredirect::route('Bodega.index');
+        $bodega->delete();
+        return redirect ()->route('Bodega.index');
     }
 }
+

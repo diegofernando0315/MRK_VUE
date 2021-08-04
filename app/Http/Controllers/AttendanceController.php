@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Attendance;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
+use Iluminate\Support\Facades\Redirect;
+
 
 class AttendanceController extends Controller
 {
@@ -14,7 +17,9 @@ class AttendanceController extends Controller
      */
     public function index()
     {
-        //
+        $asistencia=Attendance::all();
+        return inertia::render('mostrarAsistencia', compact('Attendance'));
+        
     }
 
     /**
@@ -24,7 +29,7 @@ class AttendanceController extends Controller
      */
     public function create()
     {
-        //
+        return Inertia::render('formcrearAttendance');
     }
 
     /**
@@ -35,7 +40,8 @@ class AttendanceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Attendance::create($request->all());
+        return Inertia::render('mostrarAttendance');
     }
 
     /**
@@ -57,7 +63,7 @@ class AttendanceController extends Controller
      */
     public function edit(Attendance $attendance)
     {
-        //
+        return inertia::render('formeditarAttendance',[$attendance=>'Attendance']);
     }
 
     /**
@@ -69,7 +75,8 @@ class AttendanceController extends Controller
      */
     public function update(Request $request, Attendance $attendance)
     {
-        //
+        $attendance->update($request->validate);
+        return redirect()->route('Asistencia.index');
     }
 
     /**
@@ -80,6 +87,7 @@ class AttendanceController extends Controller
      */
     public function destroy(Attendance $attendance)
     {
-        //
+        $attendance->delete();
+        return redirect()->route('Asistencia.index');
     }
 }

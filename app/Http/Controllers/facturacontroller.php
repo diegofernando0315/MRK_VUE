@@ -84,9 +84,9 @@ class facturacontroller extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(factura $customer)
     {
-        $factura->delete();
-        returnredirect::route('factura.index');
+        $customer->delete();
+        return redirect()->route('Asistencia.index');
     }
 }
