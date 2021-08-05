@@ -1,8 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
+
 Use App\Models\Bodega;
-use App\Http\Requests\BodegaRequest;
+// use App\Http\Requests\BodegaRequest;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Iluminate\Support\Facades\Redirect;
@@ -17,8 +18,11 @@ class BodegaController extends Controller
      */
     public function index()
     {
-        $bodega=Bodega::all();
-        return inertia::render('mostrarBodega', compact('Bodega'));
+        $bodegas = Bodega::all();
+
+        return inertia::render('Bodegas/Index', [
+            'bodegas' => $bodegas
+        ]);
     }
 
     /**
@@ -51,7 +55,7 @@ class BodegaController extends Controller
      */
     public function show(Bodega $bodega)
     {
-        //
+        dd($bodega);
     }
 
     /**
@@ -72,9 +76,9 @@ class BodegaController extends Controller
      * @param  \App\Models\Bodega 
      * @return \Illuminate\Http\Response
      */
-    public function update(Bodega $request, Bodega $customer )
+    public function update(Request $request, Bodega $customer )
     {
-        $customer->update($request->validate);
+        $customer->update($request->all());
         return redirect ()->route('Bodega.index');
     }
 

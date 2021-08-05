@@ -9,7 +9,7 @@
                 <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
 
                 <inertia-link
-                  :href="route('Asistencia.create')"
+                  :href="route('Attendance.create')"
                   class="flex-shrink-0 bg-blue-500 text-white text-base font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-blue-200" type="button">
                      Registrar Asistencia
                  </inertia-link>
@@ -27,7 +27,7 @@
                     </tr>
                         </thead>
                       <tbody class="bg-gray-700 border-b border-gray-600 text-gray-200">
-                            <tr v-for="Asi in Asistencias" :key="Asi.id">
+                            <tr v-for="Asi in Attendance" :key="Asi.id">
                              <td>{{Asi.inicio}}</td>
                              <td>{{Asi.final}}</td>
                              <td>{{Asi.total_dia}}</td>
@@ -36,13 +36,13 @@
                              <td>{{Asi.created_at}}</td>
                              <td>{{Asi.updated_at}}</td>
                             <td class="flex m-2">
-                     <inertia-link :href="route('Asistencias.edit',Asi.id)"
+                     <inertia-link :href="route('Attendance.edit',Asi.id)"
                           class="flex-shrink-0 bg-blue-500 text-white text-base font-semibold py-2 px-2 rounded-lg shadow-md"
                           type="button">
                           Editar  
                      </inertia-link>|
 
-                     <inertia-link :href="route('Asistencias.destroy', Asi.id)"
+                     <inertia-link :href="route('Attendance.destroy', Asi.id)"
                         class="flex-shrink-0 bg-red-500 text-white text-base font-semibold py-2 px-2 rounded-lg shadow-md"
                         type="button">
                          Eliminar  
@@ -62,7 +62,7 @@
     
 
     export default {
-        props:['Asistencias' ],
+        props:['Attendance' ],
         components: {
             AppLayout,
            

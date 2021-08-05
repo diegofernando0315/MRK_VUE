@@ -1,13 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Http\Requests\FacturaRequest;
-use App\models\factura;
+use App\models\Factura;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Redirect;
 
-class facturacontroller extends Controller
+class FacturaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +17,11 @@ class facturacontroller extends Controller
      */
     public function index()
     {
-        $factura=factura::all();
-        return inertia::render('mostrarfactura', compact('factura'));
+        $factura = Factura::all();
+        
+        return inertia::render('Facturas/Index', [
+            'registros' => $factura,
+        ]);
     }
 
     /**
@@ -27,7 +31,7 @@ class facturacontroller extends Controller
      */
     public function create()
     {
-        return Inertia::render('formcrearfactura');
+        return Inertia::render('Facturas/FormStore');
     }
 
     /**
@@ -38,9 +42,9 @@ class facturacontroller extends Controller
      */
     public function store(FacturaRequest $request)
     {
-       
-          factura::create($request->all());
-          return Inertia::render('mostrarfactura');
+          Factura::create($request->validated());
+
+          return $this->index();
     }
 
     /**
@@ -60,9 +64,9 @@ class facturacontroller extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(factura $customer)
+    public function edit(Factura $factura)
     {
-        return Inertia::render('EditarFactura',compact('customer'));
+        return Inertia::render('Facturas/FormEditar',compact('factura'));
     }
 
     /**
@@ -72,10 +76,12 @@ class facturacontroller extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(EditarFactura $request, factura $customer )
+
+    public function update(FacturaRequest $request, Factura $factura )
     {
-        $customer->update($request->validate);
-        return redirect::route('factura.index');
+        $factura->update($request->validated());
+
+        return $this->index();
     }
 
     /**
@@ -84,9 +90,10 @@ class facturacontroller extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(factura $customer)
+    public function destroy(Factura $factura)
     {
-        $customer->delete();
-        return redirect()->route('Asistencia.index');
+        $factura->delete();
+        
+        return $this->index();
     }
 }

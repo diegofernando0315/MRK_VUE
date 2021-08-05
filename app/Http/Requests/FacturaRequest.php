@@ -3,7 +3,6 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-
 class FacturaRequest extends FormRequest
 {
     /**
@@ -30,7 +29,7 @@ class FacturaRequest extends FormRequest
             'total'=>'required|string|max:200',
             'fecha'=>'required|string|max:255',
             'cliente'=>'required|string|max:255',
-            
         ];
     }
 }
+

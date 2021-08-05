@@ -9,7 +9,7 @@
                 <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
 
                  <inertia-link
-                  :href="route('factura.create')"
+                  :href="route('facturas.create')"
                   class="flex-shrink-0 bg-blue-500 text-white text-base font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-blue-200" type="button">
                      Registrar Factura
                  </inertia-link>
@@ -27,31 +27,34 @@
                             <th scope="col" class="px-6 py-3 text-center text-xs font-medium text-gray-100 uppercase tracking-wider">Acciones</th>
                     </tr>
                         </thead>
-                      <tbody class="bg-gray-700 border-b border-gray-600 text-gray-200">
-                            <tr v-for="fact in factura" :key="fact.id">
-                             <td>{{fact.cantidad}}</td>
-                             <td>{{fact.descripcion}}</td>
-                             <td>{{fact.precio_unidad}}</td>
-                             <td>{{fact.total}}</td>
-                             <td>{{fact.fecha}}</td>
-                             <td>{{fact.cliente}}</td>
-                             <td>{{fact.created_at}}</td>
-                             <td>{{fact.updated_at}}</td>
-                            <td class="flex m-2">
-                     <inertia-link :href="route('factura.edit',{customer: fact})"
-                          class="flex-shrink-0 bg-blue-500 text-white text-base font-semibold py-2 px-2 rounded-lg shadow-md"
-                          type="button">
-                          Editar  
-                     </inertia-link>|
+                        <tbody class="bg-gray-700 border-b border-gray-600 text-gray-200">
+                            <tr v-for="fact in registros" :key="fact.id">
+                                <td>{{fact.cantidad}}</td>
+                                <td>{{fact.descripcion}}</td>
+                                <td>{{fact.precio_unidad}}</td>
+                                <td>{{fact.total}}</td>
+                                <td>{{fact.fecha}}</td>
+                                <td>{{fact.cliente}}</td>
+                                <td>{{fact.created_at}}</td>
+                                <td>{{fact.updated_at}}</td>
+                                <td class="flex m-2">
+                                    <inertia-link 
+                                        :href="route('facturas.edit',fact.id)"
+                                        class="flex-shrink-0 bg-blue-500 text-white text-base font-semibold py-2 px-2 rounded-lg shadow-md"
+                                        type="button">
+                                        Editar  
+                                    </inertia-link>|
 
-                     <inertia-link :href="route('factura.destroy',{customer: fact} )"
-                        class="flex-shrink-0 bg-red-500 text-white text-base font-semibold py-2 px-2 rounded-lg shadow-md"
-                        type="button">
-                         Eliminar  
-                    </inertia-link>
-                     </td>
-                     </tr>
-                    </tbody>  
+                                    <inertia-link 
+                                        :href="route('facturas.destroy',fact.id )"
+                                        class="flex-shrink-0 bg-red-500 text-white text-base font-semibold py-2 px-2 rounded-lg shadow-md"
+                                        type="button">
+                                        Eliminar  
+                                    </inertia-link>
+                                </td>
+                            </tr>
+                        </tbody>  
+
                     </table>
                 </div>
             </div>
@@ -61,13 +64,20 @@
 
 <script>
     import AppLayout from '@/Layouts/AppLayout'
-    
-
     export default {
-        props:["factura","customer" ],
+        name: 'Facturas',
+        props:{
+            'registros': { type: Object, default: {} }
+        },
         components: {
             AppLayout,
-           
+        },
+        setup(props){
+
+            return {
+
+            }
+
         },
     }
 </script>

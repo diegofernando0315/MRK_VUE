@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBodegaTable extends Migration
+class CreateBodegasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateBodegaTable extends Migration
      */
     public function up()
     {
-        Schema::create('bodega', function (Blueprint $table) {
+        Schema::create('bodegas', function (Blueprint $table) {
             $table->id();
             $table->string('estado');
             $table->string('num_rem');

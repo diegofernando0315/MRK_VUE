@@ -21,14 +21,14 @@
                                     Dashboard
                                 </jet-nav-link>
                                 
-                                <jet-nav-link :href="route('factura.index')" :active="route().current('factura.index')">
+                                <jet-nav-link :href="route('facturas.index')" :active="route().current('facturas.index')">
                                     factura
                                 </jet-nav-link>
 
-                                 <jet-nav-link :href="route('Asistencia.index')" :active="route().current('Asistencia.index')">
+                                 <!-- <jet-nav-link :href="route('Asistencia.index')" :active="route().current('Asistencia.index')">
                                     Asistencia
-                                </jet-nav-link>
-                                <jet-nav-link :href="route('Asistencia.index')" :active="route().current('Bodega.index')">
+                                </jet-nav-link> -->
+                                <jet-nav-link :href="route('bodegas.index')" :active="route().current('bodegas.index')">
                                     Bodega
                                 </jet-nav-link>
                             </div>

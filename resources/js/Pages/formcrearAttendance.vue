@@ -3,7 +3,7 @@
      <app-layout>
         
         <template #header>
-            <h2 class="font-semibold text-xl text-gray-800 leading-tight">Crear Asistencia</h2>
+            <h2 class="font-semibold text-xl text-gray-800 leading-tight">Crear Attendance</h2>
         </template>
 
         <div class="py-12">
@@ -67,7 +67,7 @@
             
                 <div class='flex justify-end md:gap-8 gap-4 pt-5 pb-5 pr-5'>      
                 <inertia-link
-                    :href="route('Asistencia.index')"                    
+                    :href="route('Attendance.index')"                    
                     class='w-auto bg-gray-500 hover:bg-gray-700 rounded-lg shadow-xl font-medium text-white px-4 py-2' type="button">
                     Cancelar
                     
@@ -114,7 +114,7 @@ export default {
     },
     methods:{
         submit(){
-           Inertia.post(route('Asistencia.index'),{
+           Inertia.post(route('Attendance.index'),{
                inicio:this.inicio,
                final:this.final,
                total_dia:this.total_dia,
