@@ -34,7 +34,7 @@
                     </tr>
                         </thead>
                       <tbody class="bg-gray-700 border-b border-gray-600 text-gray-200">
-                            <tr v-for="Bode in Bodega" :key="Bode.id">
+                            <tr v-for="Bode in registros" :key="Bode.id">
                              <td>{{Bode.estado}}</td>
                              <td>{{Bode.num_rem}}</td>
                              <td>{{Bode.tipo}}</td>
@@ -43,18 +43,16 @@
                              <td>{{Bode.fecha_ingreso}}</td>
                              <td>{{Bode.fecha_salida}}</td>
                              <td>{{Bode.cliente}}</td>
-                             <td>{{Bode.created_at}}</td>
-                             <td>{{Bode.updated_at}}</td>
                             <td class="flex m-2">
                      <inertia-link 
-                          :href="route('Bodegas.edit',Bode.id)"
+                          :href="route('bodegas.edit',Bode.id)"
                           class="flex-shrink-0 bg-blue-500 text-white text-base font-semibold py-2 px-2 rounded-lg shadow-md"
                           type="button">
                           Editar  
                      </inertia-link>|
 
                      <inertia-link 
-                        :href="route('Bodegas.destroy', Bode.id)"
+                        :href="route('bodegas.destroy', Bode.id)"
                         class="flex-shrink-0 bg-red-500 text-white text-base font-semibold py-2 px-2 rounded-lg shadow-md"
                         type="button">
                          Eliminar  
@@ -75,7 +73,7 @@
 
     import AppLayout from '@/Layouts/AppLayout'
     export default {
-        name: 'Bodegas',
+        name: 'bodegas',
         props: {
             'registros': { type: Object, default: {} }
         },

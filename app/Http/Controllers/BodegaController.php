@@ -6,7 +6,7 @@ Use App\Models\Bodega;
 use App\Http\Requests\BodegaRequest;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
-use Iluminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Redirect;
 
 
 class BodegaController extends Controller
@@ -18,7 +18,7 @@ class BodegaController extends Controller
      */
     public function index()
     {
-        $bodega = Bodega::all();
+        $bodega=Bodega::all();
         
         return inertia::render('Bodegas/Index', [
             'registros' => $bodega,
@@ -78,7 +78,7 @@ class BodegaController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Bodega $request, Bodega $customer )
+    public function update(BodegaRequest $request, Bodega $bodega )
     {
         $bodega->update($request->validated());
 

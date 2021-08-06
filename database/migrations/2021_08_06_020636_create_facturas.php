@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFacturaTable extends Migration
+class CreateFacturas extends Migration
 {
     /**
      * Run the migrations.
@@ -32,6 +32,6 @@ class CreateFacturaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('factura');
+        Schema::dropIfExists('facturas');
     }
 }

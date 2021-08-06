@@ -42,8 +42,7 @@ Route::resources([
   'facturas' => FacturaController::class,
   // 'asistencias' => AsistenciaController::class,
   'bodegas' => BodegaController::class,
-  
-  'attendance' => AttendanceController::class
+  'Attendances' => AttendanceController::class
 ]);
 
 

@@ -2,7 +2,7 @@
     
      <app-layout>
         <template #header>
-            <h2 class="font-semibold text-xl text-gray-800 leading-tight">Editar Bodega # {{ bodega.id}}</h2>
+            <h2 class="font-semibold text-xl text-gray-800 leading-tight">Editar Bodega </h2>
         </template>
 
  <div class="py-12">
@@ -14,40 +14,40 @@
                 <div class="grid grid-cols-1">
                     <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Estado</label>
                     <input 
-                    id="Estado"
-                    v-model="form.Estado"
+                    id="estado"
+                    v-model="form.estado"
                     class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" placeholder="Estado" 
                     />
-                    <input-error :message="form.errors.Estado"/>
+                    <input-error :message="form.errors.estado"/>
                 </div>
                 
                 <div class="grid grid-cols-1">
                     <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Num_rem</label>
                     <input         
-                        id="Num_rem"
-                        v-model="form.Num_rem"                
+                        id="num_rem"
+                        v-model="form.num_rem"                
                     class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" placeholder="Num_rem" 
                     />
-                    <input-error :message="form.errors.Num_rem"/>
+                    <input-error :message="form.errors.num_rem"/>
                 </div>
 
                 <div class="grid grid-cols-1">
                     <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Tipo</label>
                     <input         
-                        id="Tipo"
-                        v-model="form.Tipo"                
+                        id="tipo"
+                        v-model="form.tipo"                
                     class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" placeholder="Tipo" 
                     />
-                    <input-error :message="form.errors.Tipo"/>
+                    <input-error :message="form.errors.tipo"/>
                 </div>
                 <div class="grid grid-cols-1">
                     <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Cantidad</label>
                     <input         
-                        id="Cantidad"
-                        v-model="form.Cantidad"                
+                        id="cantidad"
+                        v-model="form.cantidad"                
                     class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" placeholder="Cantidad" 
                     />
-                    <input-error :message="form.errors.Cantidad"/>
+                    <input-error :message="form.errors.cantidad"/>
                 </div>
 
                 <div class="grid grid-cols-1">
@@ -133,12 +133,14 @@ export default {
     setup(props){
 
         const form = useForm({
-            cantidad: props.bodega.cantidad,
-            descripcion: props.bodega.descripcion,
-            precio_unidad: props.bodega.precio_unidad,
-            total: props.bodega.total,
-            fecha: props.bodega.fecha,
-            cliente: props.bodega.cliente
+            estado:props.bodega.estado,
+            num_rem:props.bodega.num_rem,
+            tipo:props.bodega.tipo,
+            cantidad:props.bodega.cantidad,
+            descripcion:props.bodega.descripcion,
+            fecha_salida:props.bodega.fecha_salida,
+            fecha_ingreso:props.bodega.fecha_ingreso,
+            cliente:props.bodega.cliente
         }); 
     
         function updateRecords() {

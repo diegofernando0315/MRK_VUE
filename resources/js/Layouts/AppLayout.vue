@@ -18,7 +18,7 @@
                             <!-- Navigation Links -->
                             <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                                 <jet-nav-link :href="route('dashboard')" :active="route().current('dashboard')">
-                                    Dashboard
+                                    Inicio 
                                 </jet-nav-link>
                                 
                                 <jet-nav-link :href="route('facturas.index')" :active="route().current('facturas.index')">
@@ -30,7 +30,7 @@
                                     Bodega
                                 </jet-nav-link>
                                 
-                                <jet-nav-link :href="route('facturas.index')" :active="route().current('attendances.index')">
+                                <jet-nav-link :href="route('Attendances.index')" :active="route().current('Attendances.index')">
                                     Asistencia
                                 </jet-nav-link>
                                

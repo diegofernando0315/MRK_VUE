@@ -13,6 +13,7 @@ class Bodega extends Model
             'estado',
             'num_rem',
             'tipo',
+            'cantidad',
             'descripcion',
             'fecha_salida',
             'fecha_ingreso',

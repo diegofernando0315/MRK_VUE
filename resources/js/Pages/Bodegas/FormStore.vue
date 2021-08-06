@@ -14,8 +14,8 @@
                 <div class="grid grid-cols-1">
                     <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Estado</label>
                     <input 
-                    id="Estado"
-                    v-model="form.Estado"
+                    id="estado"
+                    v-model="form.estado"
                     class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" placeholder="Estado" 
                     />
                     <input-error :message="form.errors.Estado"/>
@@ -24,8 +24,8 @@
                 <div class="grid grid-cols-1">
                     <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Num_rem</label>
                     <input         
-                        id="Num_rem"
-                        v-model="form.Num_rem"                
+                        id="num_rem"
+                        v-model="form.num_rem"                
                     class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" placeholder="descripción" 
                     />
                     <input-error :message="form.errors.Num_rem"/>
@@ -34,8 +34,8 @@
                 <div class="grid grid-cols-1">
                     <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Tipo</label>
                     <input         
-                        id="Tipo"
-                        v-model="form.Tipo"                
+                        id="tipo"
+                        v-model="form.tipo"                
                     class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" placeholder="Tipo" 
                     />
                     <input-error :message="form.errors.Tipo"/>
@@ -43,20 +43,20 @@
                 <div class="grid grid-cols-1">
                     <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Cantidad</label>
                     <input         
-                        id="Cantidad"
-                        v-model="form.Cantidad"                
+                        id="cantidad"
+                        v-model="form.cantidad"                
                     class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" placeholder="Cantidad" 
                     />
-                    <input-error :message="form.errors.Cantidad"/>
+                    <input-error :message="form.errors.cantidad"/>
                 </div>
                 <div class="grid grid-cols-1">
                     <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Descripcion</label>
                     <input         
-                        id="Descripcion"
-                        v-model="form.Descripcion"                
+                        id="descripcion"
+                        v-model="form.descripcion"                
                     class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" placeholder="Descripcion" 
                     />
-                    <input-error :message="form.errors.Descripcion"/>
+                    <input-error :message="form.errors.descripcion"/>
                 </div>
                 
                 <div class="grid grid-cols-1">
@@ -131,16 +131,18 @@ export default {
     setup(props){
 
         const form = useForm({
+            estado:null,
+            num_rem:null,
+            tipo:null,
             cantidad:null,
             descripcion:null,
-            precio_unidad:null,
-            total:null,
-            fecha:null,
+            fecha_salida:null,
+            fecha_ingreso:null,
             cliente:null
         }); 
     
         function createRecords() {
-            form.post(route('facturas.store'), {
+            form.post(route('bodegas.store'), {
                 preserveScroll: true,
                 preserveState: true,
                 onSuccess: () => {
@@ -163,7 +165,7 @@ export default {
 
     methods:{
         submit(){
-           Inertia.post(route('factura.index'), this.form);
+           Inertia.post(route('bodega.index'), this.form);
         },
     },
 };
