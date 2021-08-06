@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Inventory;
+use App\Http\Requests\InventoryRequest;
+use App\models\Inventory;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
+use Illuminate\Support\Facades\Redirect;
 
 class InventoryController extends Controller
 {
@@ -16,7 +18,7 @@ class InventoryController extends Controller
     public function index()
     {
         $inventarios=Inventory::all();
-        return Inertia::render('Inventories/Index', [
+        return Inertia::render('Inventorys/Index', [
             'inventories' => $inventarios,
         ]);
     }

@@ -22,15 +22,19 @@
                                 </jet-nav-link>
                                 
                                 <jet-nav-link :href="route('facturas.index')" :active="route().current('facturas.index')">
-                                    factura
+                                    Factura
                                 </jet-nav-link>
 
-                                 <!-- <jet-nav-link :href="route('Asistencia.index')" :active="route().current('Asistencia.index')">
-                                    Asistencia
-                                </jet-nav-link> -->
+                               
                                 <jet-nav-link :href="route('bodegas.index')" :active="route().current('bodegas.index')">
                                     Bodega
                                 </jet-nav-link>
+                                
+                                <jet-nav-link :href="route('facturas.index')" :active="route().current('attendances.index')">
+                                    Asistencia
+                                </jet-nav-link>
+                               
+
                             </div>
                         </div>
 

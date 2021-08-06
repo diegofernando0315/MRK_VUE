@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 Use App\Models\Bodega;
-// use App\Http\Requests\BodegaRequest;
+use App\Http\Requests\BodegaRequest;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Iluminate\Support\Facades\Redirect;
@@ -18,11 +18,12 @@ class BodegaController extends Controller
      */
     public function index()
     {
-        $bodegas = Bodega::all();
-
+        $bodega = Bodega::all();
+        
         return inertia::render('Bodegas/Index', [
-            'bodegas' => $bodegas
-        ]);
+            'registros' => $bodega,
+
+        ]);   
     }
 
     /**
@@ -32,7 +33,7 @@ class BodegaController extends Controller
      */
     public function create()
     {
-        return Inertia::render('formcrearBodega');
+        return Inertia::render('Bodegas/FormStore');
     }
 
     /**
@@ -41,58 +42,62 @@ class BodegaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(BodegaRequest $request)
     {
-        Bodega::create($request->all());
-        return Inertia::render('mostrarBodega');
+        Bodega::create($request->validated());
+
+        return $this->index();
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Bodega 
+     * @param int  $id 
      * @return \Illuminate\Http\Response
      */
-    public function show(Bodega $bodega)
+    public function show($id)
     {
-        dd($bodega);
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param \App\Models\Bodega 
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit(Bodega $bodega)
     {
-        return inertia::render('formeditarBodega',[$bodega=>'Bodega']);
+        return Inertia::render('Bodegas/FormEditar',compact('bodega'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Bodega 
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Bodega $customer )
+    public function update(Bodega $request, Bodega $customer )
     {
-        $customer->update($request->all());
-        return redirect ()->route('Bodega.index');
+        $bodega->update($request->validated());
+
+        return $this->index();
     }
 
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Bodega $bodega
+     * @param  in $id
      * @return \Illuminate\Http\Response
      */
     public function destroy(Bodega $bodega)
     {
+        ($bodega);
         $bodega->delete();
-        return redirect ()->route('Bodega.index');
+        
+        return $this->index();
     }
 }
 

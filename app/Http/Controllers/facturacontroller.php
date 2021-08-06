@@ -92,6 +92,8 @@ class FacturaController extends Controller
      */
     public function destroy(Factura $factura)
     {
+
+        ($factura);
         $factura->delete();
         
         return $this->index();

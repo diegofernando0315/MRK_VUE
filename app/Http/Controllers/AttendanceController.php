@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\AttendanceRequest;
 use App\Models\Attendance;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
@@ -17,8 +18,11 @@ class AttendanceController extends Controller
      */
     public function index()
     {
-        $asistencia=Attendance::all();
-        return inertia::render('mostrarAsistencia', compact('Attendance'));
+        $Attendance = Attendance::all();
+        
+        return inertia::render('Attendances/Index', [
+            'registros' => $Attendance,
+        ]);
         
     }
 
@@ -29,7 +33,7 @@ class AttendanceController extends Controller
      */
     public function create()
     {
-        return Inertia::render('formcrearAttendance');
+        return Inertia::render('Attendances/FormStore');
     }
 
     /**
@@ -38,19 +42,20 @@ class AttendanceController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AttendanceRequest $request)
     {
-        Attendance::create($request->all());
-        return Inertia::render('mostrarAttendance');
+        Attendance::create($request->validated());
+        
+        return $this->index();
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Attendance  $attendance
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Attendance $attendance)
+    public function show($id)
     {
         //
     }
@@ -58,36 +63,39 @@ class AttendanceController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Attendance  $attendance
+     * @param  id $id
      * @return \Illuminate\Http\Response
      */
     public function edit(Attendance $attendance)
     {
-        return inertia::render('formeditarAttendance',[$attendance=>'Attendance']);
+        return inertia::render('Attendances/FormEditar',compact('attendance'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Attendance  $attendance
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Attendance $attendance)
+    public function update(AttendanceRequest $request, Attendance $attendance)
     {
-        $attendance->update($request->validate);
-        return redirect()->route('Asistencia.index');
+        $attendance->update($request->validate());
+
+        return $this->index();
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Attendance  $attendance
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function destroy(Attendance $attendance)
     {
-        $attendance->delete();
-        return redirect()->route('Asistencia.index');
+        ($Attendance);
+        $Attendance->delete();
+        
+        return $this->index();
     }
 }

@@ -3,12 +3,12 @@
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
-use App\Http\Controllers\AsistenciaController;
+use App\Http\Controllers\AttendanceController;
 use App\Http\Controllers\facturacontroller;
 use App\Http\Controllers\BodegaController;
 use App\Http\Models\factura;
-use App\Http\Models\Asistencia;
-
+use App\Http\Models\Bodega;
+use App\Http\Models\Attendance;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -41,7 +41,9 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function(){
 Route::resources([
   'facturas' => FacturaController::class,
   // 'asistencias' => AsistenciaController::class,
-  'bodegas' => BodegaController::class
+  'bodegas' => BodegaController::class,
+  
+  'attendance' => AttendanceController::class
 ]);
 
 
