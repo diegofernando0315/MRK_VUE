@@ -17,7 +17,8 @@ class Bodega extends Model
             'descripcion',
             'fecha_salida',
             'fecha_ingreso',
-            'cliente'];
+            'cliente'
+        ];
 
    
 }

@@ -14,5 +14,6 @@ class Attendance extends Model
         'total_dia',
         'fecha',
         'empleado'];
+        
 }
 

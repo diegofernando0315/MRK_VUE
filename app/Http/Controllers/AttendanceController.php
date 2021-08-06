@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\AttendanceRequest;
+use App\Http\Requests\Attendances;
 use App\Models\Attendance;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
-use Iluminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Redirect;
 
 
 class AttendanceController extends Controller
@@ -18,10 +18,10 @@ class AttendanceController extends Controller
      */
     public function index()
     {
-        $Attendance = Attendance::all();
+        $attendance=Attendance::all();
         
-        return inertia::render('Attendances/Index', [
-            'registros' => $Attendance,
+        return Inertia::render('Attendances/Index',[
+            'registros'=>$attendance,
         ]);
         
     }
@@ -42,7 +42,7 @@ class AttendanceController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(AttendanceRequest $request)
+    public function store(AttendancesRequest $request)
     {
         Attendance::create($request->validated());
         

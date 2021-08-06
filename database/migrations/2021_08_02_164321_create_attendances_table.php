@@ -15,14 +15,11 @@ class CreateAttendancesTable extends Migration
     {
         Schema::create('attendances', function (Blueprint $table) {
             $table->id();
-            $table->string('estado');
-            $table->string('num_rem');
-            $table->string('tipo');
-            $table->string('cantidad');
-            $table->string('descripcion');
-            $table->string('fecha_salida');
-            $table->string('fecha_ingreso');
-            $table->string('cliente');
+            $table->string('inicio');
+            $table->string('final');
+            $table->string('total_dia');
+            $table->string('fecha');
+            $table->string('empleado');
             $table->timestamps();
         });
     }

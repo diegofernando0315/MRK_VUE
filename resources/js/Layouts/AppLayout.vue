@@ -33,6 +33,10 @@
                                 <jet-nav-link :href="route('Attendances.index')" :active="route().current('Attendances.index')">
                                     Asistencia
                                 </jet-nav-link>
+
+                                 <jet-nav-link :href="route('inventarios.index')" :active="route().current('inventarios.index')">
+                                    Inventario
+                                </jet-nav-link>
                                
 
                             </div>
