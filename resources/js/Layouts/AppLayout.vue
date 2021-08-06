@@ -34,8 +34,8 @@
                                     Asistencia
                                 </jet-nav-link>
 
-                                 <jet-nav-link :href="route('inventarios.index')" :active="route().current('inventarios.index')">
-                                    Inventario
+                                 <jet-nav-link :href="route('pedido.index')" :active="route().current('pedido.index')">
+                                    Pedido
                                 </jet-nav-link>
                                
 

@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Http\Requests\FacturaRequest;
+use App\Http\Requests\OrderRequest;
 use App\Models\Order;
 use Illuminate\Http\Request;
 use Inertia\Inertia;

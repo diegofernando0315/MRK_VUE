@@ -13,6 +13,6 @@ class Order extends Model
         'cantidad',
         'tipo',
         'fecha',
-        'proveedor',
+        'proveedor'
         ];
 }
