@@ -64,7 +64,7 @@
 <script>
     import AppLayout from '@/Layouts/AppLayout'
     export default {
-        name: 'Facturas',
+        name: 'asistencia',
         props:{
             'registros': { type: Object, default: {} }
         },

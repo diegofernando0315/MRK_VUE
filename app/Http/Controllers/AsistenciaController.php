@@ -65,7 +65,7 @@ class AsistenciaController extends Controller
      */
     public function edit(Asistencia $asistencia)
     {
-        return Inertia::render('Asistencias/FormEditar',compact('asitencia'));
+        return Inertia::render('Asistencias/FormEditar',compact('asistencia'));
     }
 
     /**
@@ -75,7 +75,7 @@ class AsistenciaController extends Controller
      * @param  \App\Models\Asistencia  $asistencia
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Asistencia $asistencia)
+    public function update(AsistenciaRequest $request, Asistencia $asistencia)
     {
         $asistencia->update($request->validated());
 
