@@ -1,15 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use App\Http\Requests\AttendanceRequest;
-use App\Models\Attendance;
+use App\Http\Requests\AsistenciaRequest;
+use App\Models\Asistencia;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
-use Iluminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Redirect;
 
-
-class AttendanceController extends Controller
+class AsistenciaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,12 +16,11 @@ class AttendanceController extends Controller
      */
     public function index()
     {
-        $Attendance = Attendance::all();
+        $asistencia = Asistencia::all();
         
-        return inertia::render('Attendances/Index', [
-            'registros' => $Attendance,
+        return inertia::render('Asistencias/Index', [
+            'registros' => $asistencia,
         ]);
-        
     }
 
     /**
@@ -33,7 +30,7 @@ class AttendanceController extends Controller
      */
     public function create()
     {
-        return Inertia::render('Attendances/FormStore');
+        return Inertia::render('Asistencias/FormStore');
     }
 
     /**
@@ -42,20 +39,20 @@ class AttendanceController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(AttendanceRequest $request)
+    public function store(Request $request)
     {
-        Attendance::create($request->validated());
-        
+        Asistencia::create($request->validated());
+
         return $this->index();
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int $id
+     * @param  \App\Models\Asistencia  $asistencia
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Asistencia $asistencia)
     {
         //
     }
@@ -63,24 +60,24 @@ class AttendanceController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  id $id
+     * @param  \App\Models\Asistencia  $asistencia
      * @return \Illuminate\Http\Response
      */
-    public function edit(Attendance $attendance)
+    public function edit(Asistencia $asistencia)
     {
-        return inertia::render('Attendances/FormEditar',compact('attendance'));
+        return Inertia::render('Asistencias/FormEditar',compact('asitencia'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int $id
+     * @param  \App\Models\Asistencia  $asistencia
      * @return \Illuminate\Http\Response
      */
-    public function update(AttendanceRequest $request, Attendance $attendance)
+    public function update(Request $request, Asistencia $asistencia)
     {
-        $attendance->update($request->validate());
+        $asistencia->update($request->validated());
 
         return $this->index();
     }
@@ -88,13 +85,13 @@ class AttendanceController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\Asistencia  $asistencia
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Attendance $attendance)
+    public function destroy(Asistencia $asistencia)
     {
-        ($Attendance);
-        $Attendance->delete();
+        ($asistencia);
+        $asistencia->delete();
         
         return $this->index();
     }
