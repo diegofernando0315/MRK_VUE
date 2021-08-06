@@ -3,7 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-class AttendancesRequest extends FormRequest
+class Inventario extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,11 +23,11 @@ class AttendancesRequest extends FormRequest
     public function rules()
     {
         return [
-            'inicio'=>'required|string|max:255',
-            'final'=>'required|string|max:255',
-            'total_dia'=>'required|string|max:255',
-            'fecha'=>'required|string|max:255',
-            'empleado'=>'required|string|max:255',
+            'cantidad'=>'required|string|max:255',
+            'tipo'=>'required|string|max:255',
+            'estado'=>'required|string|max:255',
+            'fecha'=>'required|string|max:255'
+
         ];
     }
 }

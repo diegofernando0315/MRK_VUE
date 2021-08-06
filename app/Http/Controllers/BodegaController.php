@@ -20,7 +20,7 @@ class BodegaController extends Controller
     {
         $bodega=Bodega::all();
         
-        return inertia::render('Bodegas/Index', [
+        return inertia::render('Bodegas/Index',[
             'registros' => $bodega,
 
         ]);   

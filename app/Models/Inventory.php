@@ -14,7 +14,7 @@ class Inventory extends Model
         'cantidad',
             'tipo',
             'estado',
-            'fecha',
+            'fecha'
             
     ];
 }

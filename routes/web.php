@@ -6,6 +6,7 @@ use Inertia\Inertia;
 use App\Http\Controllers\AttendanceController;
 use App\Http\Controllers\facturacontroller;
 use App\Http\Controllers\BodegaController;
+use App\Http\Controllers\InventoryController;
 use App\Http\Models\factura;
 use App\Http\Models\Bodega;
 use App\Http\Models\Attendance;
@@ -42,7 +43,8 @@ Route::resources([
   'facturas' => FacturaController::class,
   // 'asistencias' => AsistenciaController::class,
   'bodegas' => BodegaController::class,
-  'Attendances' => AttendanceController::class
+  'Attendances' => AttendanceController::class,
+  'inventario' => InventoryController::class
 ]);
 
 
