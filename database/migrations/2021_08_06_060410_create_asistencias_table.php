@@ -19,6 +19,7 @@ class CreateAsistenciasTable extends Migration
             $table->string('final');
             $table->string('total_dia');
             $table->string('Fecha');
+            
             $table->timestamps();
         });
     }

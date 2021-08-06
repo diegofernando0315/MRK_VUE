@@ -14,6 +14,6 @@ class Asistencia extends Model
         'final',
         'total_dia',
         'fecha',
-        'empleo',
+        
         ];
 }

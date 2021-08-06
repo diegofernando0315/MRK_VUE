@@ -30,7 +30,7 @@
                                     Bodega
                                 </jet-nav-link>
                                 
-                                <jet-nav-link :href="route('Attendances.index')" :active="route().current('Attendances.index')">
+                                <jet-nav-link :href="route('asistencias.index')" :active="route().current('asistencias.index')">
                                     Asistencia
                                 </jet-nav-link>
 

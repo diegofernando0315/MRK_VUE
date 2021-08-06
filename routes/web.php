@@ -3,7 +3,7 @@
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
-use App\Http\Controllers\AttendanceController;
+use App\Http\Controllers\AsistenciaController;
 use App\Http\Controllers\facturacontroller;
 use App\Http\Controllers\BodegaController;
 use App\Http\Controllers\InventoryController;
@@ -44,7 +44,7 @@ Route::resources([
   'facturas' => FacturaController::class,
   // 'asistencias' => AsistenciaController::class,
   'bodegas' => BodegaController::class,
-  'Attendances' => AttendanceController::class,
+  'asistencias' => AsistenciaController::class,
   'pedido' => OrderController::class
 ]);
 

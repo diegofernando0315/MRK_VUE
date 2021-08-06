@@ -3,7 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-class AttendancesRequest extends FormRequest
+class AsistenciaRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -26,8 +26,8 @@ class AttendancesRequest extends FormRequest
             'inicio'=>'required|string|max:255',
             'final'=>'required|string|max:255',
             'total_dia'=>'required|string|max:255',
-            'fecha'=>'required|string|max:255',
-            'empleado'=>'required|string|max:255',
+            'fecha'=>'required|string|max:255'
+            
         ];
     }
 }
