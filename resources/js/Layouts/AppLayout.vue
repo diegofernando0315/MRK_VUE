@@ -34,7 +34,7 @@
                                     Asistencia
                                 </jet-nav-link>
 
-                                 <jet-nav-link :href="route('pedido.index')" :active="route().current('pedido.index')">
+                                 <jet-nav-link :href="route('pedidos.index')" :active="route().current('pedidos.index')">
                                     Pedido
                                 </jet-nav-link>
                                

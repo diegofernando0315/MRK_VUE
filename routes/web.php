@@ -45,7 +45,7 @@ Route::resources([
   // 'asistencias' => AsistenciaController::class,
   'bodegas' => BodegaController::class,
   'asistencias' => AsistenciaController::class,
-  'pedido' => OrderController::class
+  'pedidos' => OrderController::class
 ]);
 
 

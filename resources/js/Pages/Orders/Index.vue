@@ -13,7 +13,7 @@
                 <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
 
                  <inertia-link
-                  :href="route('Orders.create')"
+                  :href="route('pedidos.create')"
                   class="flex-shrink-0 bg-blue-500 text-white text-base font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-blue-200" type="button">
                      Registrar Pedido
                  </inertia-link>
@@ -39,14 +39,14 @@
                                 <td>{{order.updated_at}}</td>
                                 <td class="flex m-2">
                                     <inertia-link 
-                                        :href="route('Orders.edit',order.id)"
+                                        :href="route('pedidos.edit',order.id)"
                                         class="flex-shrink-0 bg-blue-500 text-white text-base font-semibold py-2 px-2 rounded-lg shadow-md"
                                         type="button">
                                         Editar  
                                     </inertia-link>|
 
                                     <inertia-link 
-                                        :href="route('Orders.destroy',order.id )"
+                                        :href="route('pedidos.destroy',order.id )"
                                         class="flex-shrink-0 bg-red-500 text-white text-base font-semibold py-2 px-2 rounded-lg shadow-md"
                                         type="button">
                                         Eliminar  

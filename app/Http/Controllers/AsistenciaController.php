@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Http\Requests\AsistenciaRequest;
 use App\Models\Asistencia;
 use Illuminate\Http\Request;
@@ -49,10 +50,10 @@ class AsistenciaController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Asistencia  $asistencia
+     * @param  int  $id 
      * @return \Illuminate\Http\Response
      */
-    public function show(Asistencia $asistencia)
+    public function show($id)
     {
         //
     }

@@ -18,7 +18,7 @@ class OrderController extends Controller
     {
         $pedido= Order::all();
         
-        return inertia::render('Pedidos/Index', [
+        return Inertia::render('Orders/Index', [
             'registros' => $pedido,
         ]);
     }
@@ -30,7 +30,7 @@ class OrderController extends Controller
      */
     public function create()
     {
-        return Inertia::render('Pedidos/FormStore');
+        return Inertia::render('Orders/FormStore');
     }
 
     /**
@@ -39,7 +39,7 @@ class OrderController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(OrderRequest $request)
     {
         Order::create($request->validated());
 

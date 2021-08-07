@@ -28,7 +28,7 @@
                         v-model="form.tipo"                
                     class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" placeholder="tipo" 
                     />
-                    <input-error :message="form.errors.tipo"/>
+                    
                 </div>
 
                 
@@ -57,7 +57,7 @@
             
                 <div class='flex justify-end md:gap-8 gap-4 pt-5 pb-5 pr-5'>      
                 <inertia-link
-                    :href="route('Orders.index')"                    
+                    :href="route('pedidos.index')"                    
                     class='w-auto bg-gray-500 hover:bg-gray-700 rounded-lg shadow-xl font-medium text-white px-4 py-2' type="button">
                     Cancelar
                     
@@ -100,7 +100,7 @@ export default {
         }); 
     
         function createRecords() {
-            form.post(route('Orders.store'), {
+            form.post(route('pedidos.store'), {
                 preserveScroll: true,
                 preserveState: true,
                 onSuccess: () => {
@@ -123,7 +123,7 @@ export default {
 
     methods:{
         submit(){
-           Inertia.post(route('Orders.index'), this.form);
+           Inertia.post(route('pedidos.index'), this.form);
         },
     },
 };

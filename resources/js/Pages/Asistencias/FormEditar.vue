@@ -2,7 +2,7 @@
     
      <app-layout>
         <template #header>
-            <h2 class="font-semibold text-xl text-gray-800 leading-tight">Editar Asistencias</h2>
+            <h2 class="font-semibold text-xl text-gray-800 leading-tight">Registrar Asistencia</h2>
         </template>
 
         <div class="py-12">
@@ -22,7 +22,7 @@
                 </div>
                 
                 <div class="grid grid-cols-1">
-                    <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Final</label>
+                    <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">final</label>
                     <input         
                         id="final"
                         v-model="form.final"                
@@ -40,18 +40,16 @@
                     />
                     <input-error :message="form.errors.total_dia"/>
                 </div>
-                
                 <div class="grid grid-cols-1">
                     <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Fecha</label>
                     <input         
                         id="fecha"
                         v-model="form.fecha"                
-                    class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" placeholder="Fecha" 
+                    class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" placeholder="Total" 
                     />
-                    <input-error :message="form.errors.fecha"/>
+                    <input-error :message="form.errors.Fecha"/>
                 </div>
-                
-                
+               
                 
                 </div>
             
@@ -64,10 +62,10 @@
                     
                 </inertia-link> 
                 <button 
-                    @click="updateRecords"
+                    @click="createRecords"
                     type="button"
                     class='w-auto bg-purple-500 hover:bg-purple-700 rounded-lg shadow-xl font-medium text-white px-4 py-2'>
-                    Editar
+                    Guardar
                 </button>
                 </div>
             										
@@ -76,7 +74,6 @@
         </div>
     </app-layout>
 </template>
-
 <script>
 import {Inertia} from '@inertiajs/inertia';
 import AppLayout from "@/Layouts/AppLayout";
@@ -90,7 +87,7 @@ export default {
         InputError
     },
     props:{
-        'factura': { type: Object, default: {} }
+        'asistencia': { type: Object, default: {} }
     },
 
     setup(props){
@@ -105,7 +102,7 @@ export default {
         }); 
     
         function updateRecords() {
-            form.put(route('aistencias.update', props.factura.id), {
+            form.put(route('aistencias.update', props.asistencia.id), {
                 preserveScroll: true,
                 preserveState: true,
                 onSuccess: () => {
