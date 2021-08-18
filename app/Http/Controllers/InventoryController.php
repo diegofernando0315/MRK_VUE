@@ -17,9 +17,9 @@ class InventoryController extends Controller
      */
     public function index()
     {
-        $inventarios=Inventory::all();
+        $inventory = Inventory::all();
         return Inertia::render('Inventorys/Index', [
-            'inventories' => $inventarios,
+            'registros' => $inventory,
         ]);
     }
 
@@ -30,7 +30,7 @@ class InventoryController extends Controller
      */
     public function create()
     {
-        return Inertia::render('Inventories/Create', []);
+        return Inertia::render('Inventorys/FormStore');
     }
 
     /**
@@ -39,18 +39,20 @@ class InventoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(InventoryRequest $request)
     {
-        //
+        Inventory::create($request->validated());
+
+        return $this->index();
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Inventory  $inventory
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Inventory $inventory)
+    public function show($id)
     {
         //
     }
@@ -58,19 +60,19 @@ class InventoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Inventory  $inventory
+     * @param   int  $id
      * @return \Illuminate\Http\Response
      */
     public function edit(Inventory $inventory)
     {
-        //
+        return Inertia::render('Inventorys/FormEditar',compact('inventory'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Inventory  $inventory
+     * @param   int  $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Inventory $inventory)
@@ -81,11 +83,14 @@ class InventoryController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Inventory  $inventory
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function destroy(Inventory $inventory)
     {
-        //
+        ($Inventory);
+        $Inventory->delete();
+        
+        return $this->index();
     }
 }

@@ -2,66 +2,65 @@
     
      <app-layout>
         <template #header>
-            <h2 class="font-semibold text-xl text-gray-800 leading-tight">Registrar Asistencia</h2>
+            <h2 class="font-semibold text-xl text-gray-800 leading-tight">Crear Inventario</h2>
         </template>
 
-       <div class="py-12">
+        
+        
+            
+            
+               <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                    
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 mt-5 mx-7">
                 
                 <div class="grid grid-cols-1">
-                    <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">inicio</label>
+                    <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">cantidad</label>
                     <input 
-                        id="inicio"
-                        v-model="form.inicio"
-                        class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" 
-                        type="time" 
-                        placeholder="inicio" 
+                    id="cantidad"
+                    v-model="form.cantidad"
+                    class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" 
+                    type="number" 
+                    placeholder="cantidad" 
                     />
-                    <input-error :message="form.errors.inicio"/>
+                    <input-error :message="form.errors.cantidad"/>
                 </div>
                 
                 <div class="grid grid-cols-1">
-                    <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">final</label>
+                    <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">tipo</label>
                     <input         
-                        id="final"
-                        v-model="form.final"                
+                        id="tipo"
+                        v-model="form.tipo"                
                         class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" 
-                        type="time" 
-                        placeholder="final" 
+                        type="text" 
+                        placeholder="tipo" 
                     />
-                    <input-error :message="form.errors.final"/>
+                    <input-error :message="form.errors.tipo"/>
                 </div>
 
-                
                 <div class="grid grid-cols-1">
-                    <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Total dia</label>
+                    <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">estado</label>
                     <input         
-                        id="total_dia"
-                        v-model="form.total_dia"                
-                        class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" 
-                        type="number" 
-                        placeholder="Total dia" 
+                        id="estado"
+                        v-model="form.estado"                
+                        class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+                        type="text" 
+                        placeholder="estado" 
                     />
-                    <input-error :message="form.errors.total"/>
+                    <input-error :message="form.errors.estado"/>
                 </div>
-
                 <div class="grid grid-cols-1">
                     <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Fecha</label>
                     <input         
                         id="fecha"
                         v-model="form.fecha"                
-                        class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" 
-                        type="date" 
-                        placeholder="Fecha" 
+                    class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" 
+                    type="date" 
+                    placeholder="fecha" 
                     />
-                    <input-error :message="form.errors.fecha"/>
+                    <input-error :message="form.errors.Fecha"/>
                 </div>
-                
-               
-                
                
                 
                 </div>
@@ -87,6 +86,8 @@
         </div>
     </app-layout>
 </template>
+
+
 <script>
 import {Inertia} from '@inertiajs/inertia';
 import AppLayout from "@/Layouts/AppLayout";
@@ -94,32 +95,29 @@ import InputError from "@/Jetstream/InputError";
 import { useForm } from '@inertiajs/inertia-vue3';
 
 export default {
-    name: 'Form_editar',
+    name: 'Form_crear',
     components:{
         AppLayout,
         InputError
     },
-    props:{
-        'asistencia': { type: Object, default: {} }
-    },
+    props:{},
 
     setup(props){
 
         const form = useForm({
-            inicio:props.asistencia.inicio,
-            final:props.asistencia.final,
-            total_dia:props.asistencia.total_dia,
-            fecha:props.asistencia.fecha
-
+            cantidad:null,
+            estado:null,
+            tipo:null,
+            fecha:null
 
         }); 
     
-        function updateRecords() {
-            form.put(route('aistencias.update', props.asistencia.id), {
+        function createRecords() {
+            form.post(route('Inventorys.store'), {
                 preserveScroll: true,
                 preserveState: true,
                 onSuccess: () => {
-                    console.log('Editado con exito');
+                    console.log('Guardado con exito');
                 },
                 onError: (e) => {
                     console.log('Error' + e);
@@ -129,7 +127,7 @@ export default {
         
         return {
             form,
-            updateRecords
+            createRecords
         }
 
     },
@@ -138,7 +136,7 @@ export default {
 
     methods:{
         submit(){
-           Inertia.post(route('asistencia.index'), this.form);
+           Inertia.post(route('Inventory.index'), this.form);
         },
     },
 };

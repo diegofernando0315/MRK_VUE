@@ -42,10 +42,13 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function(){
 
 Route::resources([
   'facturas' => FacturaController::class,
-  // 'asistencias' => AsistenciaController::class,
   'bodegas' => BodegaController::class,
   'asistencias' => AsistenciaController::class,
-  'pedidos' => OrderController::class
+  'pedidos' => OrderController::class,
+  'Inventorys' => InventoryController::class,
+  'Usuarios' => UsuarioController::class
+
+
 ]);
 
 

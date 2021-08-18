@@ -37,6 +37,15 @@
                                  <jet-nav-link :href="route('pedidos.index')" :active="route().current('pedidos.index')">
                                     Pedido
                                 </jet-nav-link>
+
+                                <jet-nav-link :href="route('Inventorys.index')" :active="route().current('Inventorys.index')">
+                                    Inventory
+                                </jet-nav-link>
+
+                                <jet-nav-link :href="route('Usuarios.index')" :active="route().current('Usuarios.index')">
+                                    Usuario
+                                 </jet-nav-link>
+
                                
 
                             </div>

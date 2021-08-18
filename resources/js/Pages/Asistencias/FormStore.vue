@@ -14,9 +14,11 @@
                 <div class="grid grid-cols-1">
                     <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Inicio</label>
                     <input 
-                    id="inicio"
-                    v-model="form.inicio"
-                    class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" placeholder="cantidad" 
+                        id="inicio"
+                        v-model="form.inicio"
+                        class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" 
+                        type="time" 
+                        placeholder="Inicio" 
                     />
                     <input-error :message="form.errors.inicio"/>
                 </div>
@@ -26,29 +28,39 @@
                     <input         
                         id="final"
                         v-model="form.final"                
-                    class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" placeholder="descripción" 
+                        class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" 
+                        type="time" 
+                        placeholder="Final" 
                     />
                     <input-error :message="form.errors.final"/>
                 </div>
 
                 <div class="grid grid-cols-1">
-                    <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">total_dia</label>
+                    <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Total dias</label>
                     <input         
                         id="total_dia"
                         v-model="form.total_dia"                
-                    class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" placeholder="precio_unidad" 
+                        class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+                        type="number" 
+                        placeholder="Total dias" 
                     />
                     <input-error :message="form.errors.total_dia"/>
                 </div>
+
                 <div class="grid grid-cols-1">
                     <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Fecha</label>
                     <input         
                         id="fecha"
                         v-model="form.fecha"                
-                    class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" placeholder="Total" 
+                        class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" 
+                        type="date" 
+                        placeholder="fecha" 
                     />
                     <input-error :message="form.errors.Fecha"/>
                 </div>
+
+                
+                
                
                 
                 </div>

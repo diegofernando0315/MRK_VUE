@@ -2,83 +2,79 @@
     
      <app-layout>
         <template #header>
-            <h2 class="font-semibold text-xl text-gray-800 leading-tight">Registrar Asistencia</h2>
+            <h2 class="font-semibold text-xl text-gray-800 leading-tight">Editar Inventario # {{ inven.id}}</h2>
         </template>
 
-       <div class="py-12">
+ <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                    
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 mt-5 mx-7">
                 
                 <div class="grid grid-cols-1">
-                    <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">inicio</label>
+                    <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">cantidad</label>
                     <input 
-                        id="inicio"
-                        v-model="form.inicio"
-                        class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" 
-                        type="time" 
-                        placeholder="inicio" 
+                    id="cantidad"
+                    v-model="form.cantidad"
+                    class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" 
+                    type="number" 
+                    placeholder="cantidad" 
                     />
-                    <input-error :message="form.errors.inicio"/>
+                    <input-error :message="form.errors.cantidad"/>
                 </div>
                 
-                <div class="grid grid-cols-1">
-                    <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">final</label>
-                    <input         
-                        id="final"
-                        v-model="form.final"                
-                        class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" 
-                        type="time" 
-                        placeholder="final" 
-                    />
-                    <input-error :message="form.errors.final"/>
-                </div>
 
-                
                 <div class="grid grid-cols-1">
-                    <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Total dia</label>
+                    <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">tipo</label>
                     <input         
-                        id="total_dia"
-                        v-model="form.total_dia"                
+                        id="tipo"
+                        v-model="form.tipo"                
                         class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" 
-                        type="number" 
-                        placeholder="Total dia" 
+                        type="text" 
+                        placeholder="tipo" 
                     />
-                    <input-error :message="form.errors.total"/>
+                    <input-error :message="form.errors.tipo"/>
                 </div>
 
                 <div class="grid grid-cols-1">
-                    <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Fecha</label>
+                    <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">estado</label>
+                    <input         
+                        id="estado"
+                        v-model="form.estado"                
+                        class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" 
+                        type="text" 
+                        placeholder="estado" 
+                    />
+                    <input-error :message="form.errors.estado"/>
+                </div>
+                
+                <div class="grid grid-cols-1">
+                    <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">fecha</label>
                     <input         
                         id="fecha"
                         v-model="form.fecha"                
                         class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" 
                         type="date" 
-                        placeholder="Fecha" 
+                        placeholder="fecha" 
                     />
                     <input-error :message="form.errors.fecha"/>
                 </div>
-                
-               
-                
-               
                 
                 </div>
             
             
                 <div class='flex justify-end md:gap-8 gap-4 pt-5 pb-5 pr-5'>      
                 <inertia-link
-                    :href="route('asistencias.index')"                    
+                    :href="route('Inventorys.index')"                    
                     class='w-auto bg-gray-500 hover:bg-gray-700 rounded-lg shadow-xl font-medium text-white px-4 py-2' type="button">
                     Cancelar
                     
                 </inertia-link> 
                 <button 
-                    @click="createRecords"
+                    @click="updateRecords"
                     type="button"
                     class='w-auto bg-purple-500 hover:bg-purple-700 rounded-lg shadow-xl font-medium text-white px-4 py-2'>
-                    Guardar
+                    Editar
                 </button>
                 </div>
             										
@@ -87,6 +83,7 @@
         </div>
     </app-layout>
 </template>
+
 <script>
 import {Inertia} from '@inertiajs/inertia';
 import AppLayout from "@/Layouts/AppLayout";
@@ -100,22 +97,22 @@ export default {
         InputError
     },
     props:{
-        'asistencia': { type: Object, default: {} }
+        'Inventory': { type: Object, default: {} }
     },
 
     setup(props){
 
         const form = useForm({
-            inicio:props.asistencia.inicio,
-            final:props.asistencia.final,
-            total_dia:props.asistencia.total_dia,
-            fecha:props.asistencia.fecha
-
+            
+            cantidad:props.Inventory.cantidad,
+            tipo:props.Inventory.tipo,
+            estado:props.Inventory.estado,
+            fecha:props.Inventory.fecha
 
         }); 
     
         function updateRecords() {
-            form.put(route('aistencias.update', props.asistencia.id), {
+            form.put(route('Inventorys.update', props.inven.id), {
                 preserveScroll: true,
                 preserveState: true,
                 onSuccess: () => {
@@ -138,8 +135,8 @@ export default {
 
     methods:{
         submit(){
-           Inertia.post(route('asistencia.index'), this.form);
+           Inertia.post(route('Inventorys.index'), this.form);
         },
     },
 };
-</script>
+</script>       

@@ -14,9 +14,11 @@
                 <div class="grid grid-cols-1">
                     <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Estado</label>
                     <input 
-                    id="estado"
-                    v-model="form.estado"
-                    class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" placeholder="Estado" 
+                        id="estado"
+                        v-model="form.estado"
+                        class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" 
+                        type="text" 
+                        placeholder="Estado" 
                     />
                     <input-error :message="form.errors.estado"/>
                 </div>
@@ -26,7 +28,9 @@
                     <input         
                         id="num_rem"
                         v-model="form.num_rem"                
-                    class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" placeholder="Num_rem" 
+                        class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" 
+                        type="text" 
+                        placeholder="Num_rem" 
                     />
                     <input-error :message="form.errors.num_rem"/>
                 </div>
@@ -36,7 +40,9 @@
                     <input         
                         id="tipo"
                         v-model="form.tipo"                
-                    class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" placeholder="Tipo" 
+                        class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" 
+                        type="text"
+                        placeholder="Tipo" 
                     />
                     <input-error :message="form.errors.tipo"/>
                 </div>
@@ -45,7 +51,9 @@
                     <input         
                         id="cantidad"
                         v-model="form.cantidad"                
-                    class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" placeholder="Cantidad" 
+                        class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" 
+                        type="number" 
+                        placeholder="Cantidad" 
                     />
                     <input-error :message="form.errors.cantidad"/>
                 </div>
@@ -55,7 +63,9 @@
                     <input         
                         id="descripcion"
                         v-model="form.descripcion"                
-                    class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" placeholder="descripcion" 
+                        class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" 
+                        type="text"
+                        placeholder="descripcion" 
                     />
                     <input-error :message="form.errors.descripcion"/>
                 </div>
@@ -65,7 +75,9 @@
                     <input         
                         id="fecha_salida"
                         v-model="form.fecha_salida"                
-                    class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" placeholder="fecha_salida" 
+                        class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" 
+                        type="date" 
+                        placeholder="fecha_salida" 
                     />
                     <input-error :message="form.errors.fecha_salida"/>
                 </div>
@@ -75,19 +87,23 @@
                     <input         
                         id="fecha_ingreso"
                         v-model="form.fecha_ingreso"                
-                    class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" placeholder="fecha_ingreso" 
+                        class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" 
+                        type="date" 
+                        placeholder="fecha_ingreso" 
                     />
                     <input-error :message="form.errors.fecha_ingreso"/>
                 </div>
                 
                 <div class="grid grid-cols-1">
-                    <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Usuario</label>
+                    <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">cliente</label>
                     <input         
                         id="cliente"
                         v-model="form.cliente"                
-                    class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" placeholder="cliente" 
+                        class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" 
+                        type="text" 
+                        placeholder="cliente" 
                     />
-                    <input-error :message="form.errors.usuario"/>
+                    <input-error :message="form.errors.cliente"/>
                 </div>
                 
                 </div>
