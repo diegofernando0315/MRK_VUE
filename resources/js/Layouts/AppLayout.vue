@@ -210,7 +210,7 @@
                                     Create New Team
                                 </jet-responsive-nav-link>
 
-                                <div class="border-t border-gray-200"></div>
+                                <div class="border-t border-gray-400"></div>
 
                                 <!-- Team Switcher -->
                                 <div class="block px-4 py-2 text-xs text-gray-400">

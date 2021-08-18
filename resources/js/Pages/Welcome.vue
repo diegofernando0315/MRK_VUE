@@ -35,7 +35,8 @@
 
                         <div class="ml-12">
                             <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                Laravel has wonderful, thorough documentation covering every aspect of the framework. Whether you are new to the framework or have previous experience with Laravel, we recommend reading all of the documentation from beginning to end.
+                               <h1>VISION</h1>
+                               <p>Aqui iria la vision</p>
                             </div>
                         </div>
                     </div>
@@ -48,7 +49,7 @@
 
                         <div class="ml-12">
                             <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                Laracasts offers thousands of video tutorials on Laravel, PHP, and JavaScript development. Check them out, see for yourself, and massively level up your development skills in the process.
+                                deberia cambiar el contenido.
                             </div>
                         </div>
                     </div>
@@ -137,7 +138,7 @@
     }
 
     .text-gray-700 {
-        color: #4a5568;
+        color: #51684a;
         color: rgba(74, 85, 104, var(--tw-text-opacity));
     }
 
