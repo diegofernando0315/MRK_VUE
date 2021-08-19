@@ -39,7 +39,7 @@
                                 </jet-nav-link>
 
                                 <jet-nav-link :href="route('Inventorys.index')" :active="route().current('Inventorys.index')">
-                                    Inventory
+                                    Inventario
                                 </jet-nav-link>
 
                                 <jet-nav-link :href="route('Usuarios.index')" :active="route().current('Usuarios.index')">

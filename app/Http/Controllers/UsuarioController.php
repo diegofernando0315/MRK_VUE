@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UsuarioRequest;
 use App\Models\Usuario;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
@@ -16,10 +17,10 @@ class UsuarioController extends Controller
      */
     public function index()
     {
-        $Usuario = Usuario::all();
+        $usuario = Usuario::all();
         
         return inertia::render('Usuarios/Index', [
-            'registros' => $Usuario,
+            'registros' => $usuario,
         ]);
     }
 
@@ -39,7 +40,7 @@ class UsuarioController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(UsuarioRequest $request)
     {
         Usuario::create($request->validated());
 
@@ -48,8 +49,8 @@ class UsuarioController extends Controller
 
     /**
      * Display the specified resource.
-     ** @param  int  $id
-     * @param  \App\Models\Usuario  $usuario
+     * 
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -65,7 +66,7 @@ class UsuarioController extends Controller
      */
     public function edit(Usuario $usuario)
     {
-        return Inertia::render('Usuarios/FormEditar',compact('Usuario'));
+        return Inertia::render('Usuarios/FormEditar',compact('usuario'));
     }
 
     /**
