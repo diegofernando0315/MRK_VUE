@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\InventoryRequest;
+use App\Http\Requests\InventoryTestRequest;
 use App\models\Inventory;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
@@ -39,7 +39,7 @@ class InventoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(InventoryRequest $request)
+    public function store(InventoryTestRequest $request)
     {
         Inventory::create($request->validated());
 
