@@ -14,9 +14,11 @@
                 <div class="grid grid-cols-1">
                     <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Cantidad</label>
                     <input 
-                    id="cantidad"
-                    v-model="form.cantidad"
-                    class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" placeholder="cantidad" 
+                        id="cantidad"
+                        v-model="form.cantidad"
+                        class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" 
+                        type="number" 
+                        placeholder="cantidad" 
                     />
                     <input-error :message="form.errors.cantidad"/>
                 </div>
@@ -26,7 +28,9 @@
                     <input         
                         id="tipo"
                         v-model="form.tipo"                
-                    class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" placeholder="tipo" 
+                        class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" 
+                        type="text"
+                        placeholder="tipo" 
                     />
                     
                 </div>
@@ -37,7 +41,9 @@
                     <input         
                         id="fecha"
                         v-model="form.fecha"                
-                    class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" placeholder="Fecha" 
+                        class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" 
+                        type="date" 
+                        placeholder="Fecha" 
                     />
                     <input-error :message="form.errors.fecha"/>
                 </div>
@@ -47,9 +53,11 @@
                     <input         
                         id="proveedor"
                         v-model="form.proveedor"                
-                    class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" placeholder="proveedor" 
+                        class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" 
+                        type="text" 
+                        placeholder="proveedor" 
                     />
-                    <input-error :message="form.errors.usuario"/>
+                    <input-error :message="form.errors.proveedor"/>
                 </div>
                 
                 </div>
@@ -94,9 +102,9 @@ export default {
 
         const form = useForm({
             cantidad:null,
-            descripcion:null,
+            tipo:null,
             fecha:null,
-            cliente:null
+            proveedor:null
         }); 
     
         function createRecords() {

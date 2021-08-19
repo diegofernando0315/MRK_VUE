@@ -14,9 +14,11 @@
                 <div class="grid grid-cols-1">
                     <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Cantidad</label>
                     <input 
-                    id="cantidad"
-                    v-model="form.cantidad"
-                    class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" placeholder="cantidad" 
+                        id="cantidad"
+                        v-model="form.cantidad"
+                        class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" 
+                        type="number" 
+                        placeholder="cantidad" 
                     />
                     <input-error :message="form.errors.cantidad"/>
                 </div>
@@ -26,7 +28,9 @@
                     <input         
                         id="descripcion"
                         v-model="form.descripcion"                
-                    class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" placeholder="descripción" 
+                        class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" 
+                        type="text" 
+                        placeholder="descripción" 
                     />
                     <input-error :message="form.errors.descripcion"/>
                 </div>
@@ -36,7 +40,9 @@
                     <input         
                         id="precio_unidad"
                         v-model="form.precio_unidad"                
-                    class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" placeholder="precio_unidad" 
+                        class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" 
+                        type="text" 
+                        placeholder="precio_unidad" 
                     />
                     <input-error :message="form.errors.precio_unidad"/>
                 </div>
@@ -45,7 +51,9 @@
                     <input         
                         id="total"
                         v-model="form.total"                
-                    class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" placeholder="Total" 
+                        class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" 
+                        type="text" 
+                        placeholder="Total" 
                     />
                     <input-error :message="form.errors.total"/>
                 </div>
@@ -54,19 +62,23 @@
                     <input         
                         id="fecha"
                         v-model="form.fecha"                
-                    class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" placeholder="Fecha" 
+                        class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" 
+                        type="date" 
+                        placeholder="Fecha" 
                     />
                     <input-error :message="form.errors.fecha"/>
                 </div>
                 
                 <div class="grid grid-cols-1">
-                    <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Usuario</label>
+                    <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">cliente</label>
                     <input         
                         id="cliente"
                         v-model="form.cliente"                
-                    class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" placeholder="cliente" 
+                        class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" 
+                        type="text" 
+                        placeholder="cliente" 
                     />
-                    <input-error :message="form.errors.usuario"/>
+                    <input-error :message="form.errors.cliente"/>
                 </div>
                 
                 </div>

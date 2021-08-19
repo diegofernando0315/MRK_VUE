@@ -11,9 +11,9 @@ class Inventory extends Model
 
     use HasFactory;
     protected $fillable = [
-        'cantidad',
-            'tipo',
+            'cantidad',
             'estado',
+            'tipo',
             'fecha'
             
     ];

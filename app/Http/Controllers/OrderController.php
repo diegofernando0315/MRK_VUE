@@ -65,7 +65,7 @@ class OrderController extends Controller
      */
     public function edit(Order $order)
     {
-        return Inertia::render('Pedidos/FormEditar',compact('pedido'));
+        return Inertia::render('Orders/FormEditar',compact('pedido'));
     }
 
     /**

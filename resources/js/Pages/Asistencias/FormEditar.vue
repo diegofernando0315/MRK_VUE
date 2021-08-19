@@ -2,7 +2,7 @@
     
      <app-layout>
         <template #header>
-            <h2 class="font-semibold text-xl text-gray-800 leading-tight">Registrar Asistencia</h2>
+            <h2 class="font-semibold text-xl text-gray-800 leading-tight">Editar Asistencia # {{ asistencia.id}}</h2>
         </template>
 
        <div class="py-12">

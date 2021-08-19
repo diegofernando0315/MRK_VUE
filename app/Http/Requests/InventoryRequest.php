@@ -3,7 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-class Inventario extends FormRequest
+class Inventory extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,8 +24,8 @@ class Inventario extends FormRequest
     {
         return [
             'cantidad'=>'required|string|max:255',
-            'tipo'=>'required|string|max:255',
             'estado'=>'required|string|max:255',
+            'tipo'=>'required|string|max:255',
             'fecha'=>'required|string|max:255'
 
         ];

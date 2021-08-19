@@ -34,7 +34,7 @@
                                 <td>{{order.cantidad}}</td>
                                 <td>{{order.tipo}}</td>
                                 <td>{{order.fecha}}</td>
-                                <td>{{order.cliente}}</td>
+                                <td>{{order.proveedor}}</td>
                                 <td>{{order.created_at}}</td>
                                 <td>{{order.updated_at}}</td>
                                 <td class="flex m-2">
