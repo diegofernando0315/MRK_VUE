@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\InventoryTestRequest;
-use App\models\Inventory;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Redirect;
+
+use App\Models\Inventory;
+use App\Http\Requests\InventoryTestRequest;
 
 class InventoryController extends Controller
 {
