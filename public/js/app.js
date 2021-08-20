@@ -21870,7 +21870,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 
-var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"p-6 sm:px-20 bg-white border-b border-gray-200\"><div></div><div class=\"mt-8 text-2xl text-yellow-10text-purple-200\t--tw-text-opacity: 1;\r\ncolor: rgba(76, 29, 149, var(--tw-text-opacity font-size 100));\"><div class=\"pt-6  text-center space-y-4\"> QUIENES SOMOS </div><li class=\"bg-purple-400\"></li><p class=\"font-serif 10text\"> El grupo GESTOR ADMINISTRATIVO Tenemos soluciones ideales para todas las empresas, en todas las categorías (grandes, medianas y pequeñas), nuestro objetivo es brindar la mejor tecnología para que las industrias, negocios u organizaciones tengan una herramienta que se ajuste a su necesidad, innovando en diseño y por supuesto que sea amigable con el usuario final ¡¡¡ CUENTANOS QUE NECESITAS, NOSOTROS LO DESARROLLAMOS ¡¡¡ </p><li class=\"bg-blue-400\"></li></div></div>", 1);
+var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"p-6 sm:px-20 bg-white border-b border-gray-200\"><div></div><div class=\"mt-8 text-2xl text-yellow-10text-purple-200\t--tw-text-opacity: 1;\r\ncolor: rgba(76, 29, 149, var(--tw-text-opacity font-size 100));\"><div class=\"pt-6  text-center space-y-4\"> QUIENES SOMOS </div><li class=\"bg-purple-400\"></li><p class=\"font-serif 10text\"> El grupo GESTOR ADMINISTRATIVO Tenemos soluciones ideales para todas las empresas, en todas las categorías (grandes, medianas y pequeñas), nuestro objetivo es brindar la mejor tecnología para que las industrias, negocios u organizaciones tengan una herramienta que se ajuste a su necesidad, innovando en diseño y por supuesto que sea amigable con el usuario final ¡¡¡ CUENTANOS QUE NECESITAS, NOSOTROS LO DESARROLLAMOS ¡¡¡ </p><li class=\"bg-purple-400\"></li></div></div>", 1);
 
 var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "bg-gray-200 bg-opacity-25 grid grid-cols-1 md:grid-cols-2"
@@ -21892,7 +21892,7 @@ var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("
   d: "M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
 })]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "ml-4 text-lg text-gray-600 leading-7 font-semibold"
-}, "¿QUÉ HACEMOS?/>")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+}, "¿QUÉ HACEMOS?")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "ml-12"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "mt-2 text-sm text-gray-500"
@@ -21901,7 +21901,7 @@ var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "mt-3 flex items-center text-sm font-semibold text-indigo-700"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
-  "class": "ml-1 text-indigo-500"
+  "class": "ml-1 text-Cursive-500"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", {
   viewBox: "0 0 20 20",
   fill: "currentColor",
@@ -21952,7 +21952,9 @@ var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("
   "clip-rule": "evenodd"
 })])])])])])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "p-6 border-t border-gray-200"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("li", {
+  "class": "bg-green-500"
+}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "flex items-center"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", {
   fill: "none",
@@ -21965,7 +21967,7 @@ var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
   d: "M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
 })]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
-  "class": "ml-4 text-lg text-gray-600 leading-7 font-semibold"
+  "class": "ml-4 text-lg text-gray-600 leading-7 font-Cursive"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", {
   href: "https://tailwindcss.com/"
 }, "OBJETIVOS")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
