@@ -25201,8 +25201,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h2", {
-  "class": "font-semibold text-xl text-gray-800 leading-tight"
-}, " Dashboard ", -1
+  "class": "font-weight: 100; text-xl text-gray-800 leading-tight"
+}, " MERAKI BRAND ", -1
 /* HOISTED */
 );
 

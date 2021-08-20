@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Illuminate\Http\InventoryRequest;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Redirect;
 use App\Models\Inventory;
-use App\Http\Requests\InventoryRequest;
+use Illuminate\Http\Request;
 
 
 class InventoryController extends Controller
@@ -40,11 +40,21 @@ class InventoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(InventoryTestRequest $request)
+    public function store(Request $request)
     {
-        Inventory::create($request->validated());
+    //   return response()->json($request);
 
-        return $this->index();
+        Inventory::Insert([
+            'cantidad'=> $request->cantidad,
+            'tipo'=> $request->tipo,
+            'proveedor'=> $request->estado,
+            'fecha'=> $request->fecha
+            ]);
+        
+
+     //   Inventory::create($request->validated());
+
+       return $this->index();
     }
 
     /**
@@ -91,8 +101,8 @@ class InventoryController extends Controller
      */
     public function destroy(Inventory $inventory)
     {
-        ($Inventory);
-        $Inventory->delete();
+        ($inventory);
+        $inventory->delete();
         
         return $this->index();
     }
