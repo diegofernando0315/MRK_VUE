@@ -3,7 +3,6 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-
 class InventoryTestRequest extends FormRequest
 {
     /**
@@ -13,7 +12,7 @@ class InventoryTestRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -27,7 +26,9 @@ class InventoryTestRequest extends FormRequest
             'cantidad'=>'required|string|max:255',
             'estado'=>'required|string|max:255',
             'tipo'=>'required|string|max:255',
-            'fecha'=>'required|string|max:255',
+            'fecha'=>'required|string|max:255'
+
         ];
     }
 }
+

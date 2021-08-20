@@ -8,9 +8,15 @@ use App\Http\Controllers\facturacontroller;
 use App\Http\Controllers\BodegaController;
 use App\Http\Controllers\InventoryController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\UsuarioController;
 use App\Http\Models\factura;
 use App\Http\Models\Bodega;
-use App\Http\Models\Attendance;
+use App\Http\Models\Asistencia;
+use App\Http\Models\Inventory;
+use App\Http\Models\Order;
+use App\Http\Models\Usuario;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -36,9 +42,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function(){
 })->name('dashboard');
 
 
-// Route::middleware(['auth:sanctum','verified'])->resource('/dasboard/factura',facturacontroller::class)->parameters(['factura'=>'customer']);
 
-// Route::middleware(['auth:sanctum','verified'])->resource('/dasboard/Asistencia',AsistenciaController::class);
 
 Route::resources([
   'facturas' => FacturaController::class,
@@ -54,16 +58,7 @@ Route::resources([
 
 
 
-// Route::middleware(['auth:sanctum','verified'])
-// ->resource('bodegas',BodegaController::class);
 
-//Route::middleware(['auth:sanctum','verified'])->resource('/dasboard/asistencia',asistenciacontroller::class);
-
-//Route::resource('asistencia', asistenciacontroller::class)
-  //->middleware(['auth:sanctum', 'verified']);
-
-//Route::resource('factura', facturacontroller::class)
-  // ->middleware(['auth:sanctum', 'verified']);
 
 
  

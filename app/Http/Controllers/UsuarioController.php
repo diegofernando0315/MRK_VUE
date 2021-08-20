@@ -78,7 +78,9 @@ class UsuarioController extends Controller
      */
     public function update(Request $request, Usuario $usuario)
     {
-        //
+        $usuario->update($request->validated());
+
+        return $this->index();
     }
 
     /**

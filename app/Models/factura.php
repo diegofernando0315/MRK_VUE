@@ -9,10 +9,7 @@ class Factura extends Model
 {
     use HasFactory;
 
-    //protected $table = 'factura';
-   // protected $primaryKey ='id_factura';
-    //public $timestamps = false;
-    //protected $fillable =['id_factura','cantidad','descripcion','precio_unidad','tolal','fecha','cliente'];
+
 
     protected $fillable=[ 
             'cantidad',

@@ -52,7 +52,7 @@
                         id="celular"
                         v-model="form.celular"                
                         class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" 
-                        type="text" 
+                        type="number" 
                         placeholder="celular" 
                     />
                     <input-error :message="form.errors.celular"/>
@@ -64,7 +64,7 @@
                         id="telefono"
                         v-model="form.telefono"                
                         class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" 
-                        type="date" 
+                        type="number" 
                         placeholder="telefono" 
                     />
                     <input-error :message="form.errors.telefono"/>
@@ -76,7 +76,7 @@
                         id="correo"
                         v-model="form.correo"                
                         class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" 
-                        type="date" 
+                        type="text" 
                         placeholder="correo" 
                     />
                     <input-error :message="form.errors.correo"/>
@@ -88,7 +88,7 @@
                         id="direccion"
                         v-model="form.direccion"                
                         class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" 
-                        type="date" 
+                        type="text" 
                         placeholder="direccion" 
                     />
                     <input-error :message="form.errors.direccion"/>
@@ -100,7 +100,7 @@
                         id="usuario"
                         v-model="form.usuario"                
                         class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" 
-                        type="date" 
+                        type="text" 
                         placeholder="usuario" 
                     />
                     <input-error :message="form.errors.usuario"/>
@@ -112,7 +112,7 @@
                         id="contraseña"
                         v-model="form.contraseña"                
                         class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" 
-                        type="date" 
+                        type="text" 
                         placeholder="contraseña" 
                     />
                     <input-error :message="form.errors.contraseña"/>
@@ -124,7 +124,7 @@
                         id="estado"
                         v-model="form.estado"                
                         class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" 
-                        type="date" 
+                        type="text" 
                         placeholder="estado" 
                     />
                     <input-error :message="form.errors.estado"/>
@@ -147,7 +147,7 @@
             
                 <div class='flex justify-end md:gap-8 gap-4 pt-5 pb-5 pr-5'>      
                 <inertia-link
-                    :href="route('usuarios.index')"                    
+                    :href="route('Usuarios.index')"                    
                     class='w-auto bg-gray-500 hover:bg-gray-700 rounded-lg shadow-xl font-medium text-white px-4 py-2' type="button">
                     Cancelar
                     
@@ -198,7 +198,7 @@ export default {
         }); 
     
         function createRecords() {
-            form.post(route('usuarios.store'), {
+            form.post(route('Usuarios.store'), {
                 preserveScroll: true,
                 preserveState: true,
                 onSuccess: () => {
@@ -221,7 +221,7 @@ export default {
 
     methods:{
         submit(){
-           Inertia.post(route('usuario.index'), this.form);
+           Inertia.post(route('Usuario.index'), this.form);
         },
     },
 };

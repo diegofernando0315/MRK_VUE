@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Redirect;
-
 use App\Models\Inventory;
-use App\Http\Requests\InventoryTestRequest;
+use App\Http\Requests\InventoryRequest;
+
 
 class InventoryController extends Controller
 {
@@ -79,7 +78,9 @@ class InventoryController extends Controller
      */
     public function update(Request $request, Inventory $inventory)
     {
-        //
+        $inventory->update($request->validated());
+
+        return $this->index();
     }
 
     /**

@@ -20603,7 +20603,7 @@ __webpack_require__.r(__webpack_exports__);
     });
 
     function createRecords() {
-      form.post(route('usuarios.store'), {
+      form.post(route('Usuarios.store'), {
         preserveScroll: true,
         preserveState: true,
         onSuccess: function onSuccess() {
@@ -20622,7 +20622,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     submit: function submit() {
-      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_0__.Inertia.post(route('usuario.index'), this.form);
+      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_0__.Inertia.post(route('Usuario.index'), this.form);
     }
   }
 });
@@ -22369,7 +22369,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* PROPS */
   , ["href", "active"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_nav_link, {
     href: _ctx.route('Usuarios.index'),
-    active: _ctx.route().current('Usuarios.index')
+    active: _ctx.route().current('Usuario.index')
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
       return [_hoisted_14];
@@ -28146,7 +28146,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           return $setup.form.celular = $event;
         }),
         "class": "py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent",
-        type: "text",
+        type: "number",
         placeholder: "celular"
       }, null, 512
       /* NEED_PATCH */
@@ -28160,7 +28160,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           return $setup.form.telefono = $event;
         }),
         "class": "py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent",
-        type: "date",
+        type: "number",
         placeholder: "telefono"
       }, null, 512
       /* NEED_PATCH */
@@ -28174,7 +28174,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           return $setup.form.correo = $event;
         }),
         "class": "py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent",
-        type: "date",
+        type: "text",
         placeholder: "correo"
       }, null, 512
       /* NEED_PATCH */
@@ -28188,7 +28188,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           return $setup.form.direccion = $event;
         }),
         "class": "py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent",
-        type: "date",
+        type: "text",
         placeholder: "direccion"
       }, null, 512
       /* NEED_PATCH */
@@ -28202,7 +28202,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           return $setup.form.usuario = $event;
         }),
         "class": "py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent",
-        type: "date",
+        type: "text",
         placeholder: "usuario"
       }, null, 512
       /* NEED_PATCH */
@@ -28216,7 +28216,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           return $setup.form.contraseña = $event;
         }),
         "class": "py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent",
-        type: "date",
+        type: "text",
         placeholder: "contraseña"
       }, null, 512
       /* NEED_PATCH */
@@ -28230,7 +28230,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           return $setup.form.estado = $event;
         }),
         "class": "py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent",
-        type: "date",
+        type: "text",
         placeholder: "estado"
       }, null, 512
       /* NEED_PATCH */
@@ -28253,7 +28253,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       }, null, 8
       /* PROPS */
       , ["message"])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_28, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_inertia_link, {
-        href: _ctx.route('usuarios.index'),
+        href: _ctx.route('Usuarios.index'),
         "class": "w-auto bg-gray-500 hover:bg-gray-700 rounded-lg shadow-xl font-medium text-white px-4 py-2",
         type: "button"
       }, {
@@ -28311,7 +28311,7 @@ var _hoisted_4 = {
   "class": "bg-white overflow-hidden shadow-xl sm:rounded-lg"
 };
 
-var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Registrar usuario ");
+var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Registrar Usuario ");
 
 var _hoisted_6 = {
   "class": "rounded-t-lg mt-5 min-w-full mx-auto bg-gray-800 text-gray-100"
@@ -28383,7 +28383,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     }),
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
       return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_inertia_link, {
-        href: _ctx.route('usuarios.create'),
+        href: _ctx.route('Usuarios.create'),
         "class": "flex-shrink-0 bg-blue-500 text-white text-base font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-blue-200",
         type: "button"
       }, {

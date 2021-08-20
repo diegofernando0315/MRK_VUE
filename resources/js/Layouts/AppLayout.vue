@@ -42,7 +42,7 @@
                                     Inventario
                                 </jet-nav-link>
 
-                                <jet-nav-link :href="route('Usuarios.index')" :active="route().current('Usuarios.index')">
+                                <jet-nav-link :href="route('Usuarios.index')" :active="route().current('Usuario.index')">
                                     Usuario
                                  </jet-nav-link>
 
